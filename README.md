@@ -75,7 +75,7 @@ To maintain the integrity of the **industry** standards established here, all co
 
 ## Governance
 
-**Spearheaded** by [Mason](https://virtualmase.vercel.app)
+**Spearheaded** by [Mason](https://virtualmase.vercel.app) 
 **Industry:** Autonomous Resource Management & Technical Architecture
 
 > *Refining the precision of digital signals with the discipline of hospitality.*
