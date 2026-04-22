@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>VIRTUALMASE — SEO Strategist &amp; Systems Architect</title>
+<meta name="description" content="VIRTUALMASE — SEO Strategist &amp; Systems Architect. Building AI-native signal infrastructure and agentic systems across 8 active projects."/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Barlow+Condensed:wght@300;400;600;700&family=IBM+Plex+Sans:wght@300;400&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+
+/* ── DESKTOP ── */
+body{
+  background:#6a6a6a;
+  font-family:'IBM Plex Sans',sans-serif;
+  min-height:100vh;
+  padding:16px 20px 0;
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 1px,rgba(0,0,0,0.04) 1px,rgba(0,0,0,0.04) 2px),
+    repeating-linear-gradient(90deg,transparent,transparent 1px,rgba(0,0,0,0.025) 1px,rgba(0,0,0,0.025) 2px);
+}
+
+/* ── HEADER BAR (above window) ── */
+.header{
+  display:flex;justify-content:space-between;align-items:stretch;
+  margin-bottom:12px;max-width:960px;margin-left:auto;margin-right:auto;
+  gap:8px;
+}
+.header-brand{
+  font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;
+  color:#fff;letter-spacing:1px;text-transform:uppercase;
+  display:flex;align-items:center;gap:10px;
+}
+.header-brand span{color:#00C8FF;}
+.header-tagline{
+  font-family:'JetBrains Mono',monospace;font-size:9px;
+  color:rgba(255,255,255,0.45);letter-spacing:1.5px;
+  margin-top:2px;text-transform:uppercase;
+}
+.header-left{display:flex;flex-direction:column;justify-content:center;}
+.header-center{
+  display:flex;gap:6px;align-items:center;flex:1;justify-content:center;flex-wrap:wrap;
+}
+.hstat{
+  background:rgba(0,0,0,0.25);
+  border-top:1px solid rgba(255,255,255,0.15);
+  border-left:1px solid rgba(255,255,255,0.15);
+  border-right:1px solid rgba(0,0,0,0.4);
+  border-bottom:1px solid rgba(0,0,0,0.4);
+  padding:5px 12px;
+  text-align:center;
+  min-width:72px;
+}
+.hstat-val{
+  font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;
+  color:#00C8FF;line-height:1;
+}
+.hstat-label{
+  font-family:'JetBrains Mono',monospace;font-size:7px;
+  color:rgba(255,255,255,0.45);letter-spacing:1.5px;text-transform:uppercase;
+  margin-top:2px;
+}
+.header-right{
+  display:flex;flex-direction:column;justify-content:center;align-items:flex-end;gap:4px;
+}
+.header-contact-item{
+  font-family:'JetBrains Mono',monospace;font-size:9px;
+  color:rgba(255,255,255,0.5);letter-spacing:0.5px;
+  display:flex;align-items:center;gap:6px;
+}
+.header-contact-item .hci-label{color:rgba(255,255,255,0.28);font-size:8px;letter-spacing:1.5px;text-transform:uppercase;}
+.header-avail{
+  font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;
+  background:rgba(0,200,100,0.2);
+  border:1px solid rgba(0,200,100,0.35);
+  color:rgba(0,220,120,0.9);
+  padding:2px 8px;text-transform:uppercase;
+}
+.avail-dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:rgba(0,220,120,0.9);margin-right:5px;animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
+
+/* ── WINDOW ── */
+.window{
+  background:#C0C0C0;
+  border-top:2px solid #FFFFFF;border-left:2px solid #FFFFFF;
+  border-right:2px solid #404040;border-bottom:2px solid #404040;
+  max-width:960px;margin:0 auto;
+}
+
+/* ── TITLEBAR ── */
+.titlebar{
+  background:linear-gradient(90deg,#000080 0%,#1084d0 70%,#0060a0 100%);
+  padding:4px 8px;display:flex;align-items:center;justify-content:space-between;
+}
+.titlebar-left{display:flex;align-items:center;gap:8px;}
+.titlebar-icon{
+  width:14px;height:14px;background:#C0C0C0;border:1px solid #fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:8px;color:#000080;font-weight:700;font-family:'JetBrains Mono',monospace;
+}
+.titlebar-title{
+  font-family:'JetBrains Mono',monospace;font-size:11px;color:#fff;letter-spacing:0.5px;
+}
+.titlebar-right{display:flex;align-items:center;gap:16px;}
+.titlebar-meta{
+  font-family:'JetBrains Mono',monospace;font-size:9px;
+  color:rgba(255,255,255,0.55);letter-spacing:0.5px;
+  display:flex;gap:12px;
+}
+.titlebar-meta span{color:rgba(255,255,255,0.75);}
+.win-controls{display:flex;gap:3px;}
+.win-btn{
+  width:16px;height:14px;background:#C0C0C0;
+  border-top:1px solid #fff;border-left:1px solid #fff;
+  border-right:1px solid #404040;border-bottom:1px solid #404040;
+  cursor:pointer;font-size:9px;display:flex;align-items:center;justify-content:center;
+}
+
+/* ── MENUBAR ── */
+.menubar{background:#C0C0C0;border-bottom:1px solid #808080;padding:3px 8px;display:flex;gap:0;}
+.menu-item{
+  font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:#000;
+  padding:2px 10px;cursor:pointer;font-weight:300;user-select:none;
+}
+.menu-item:hover,.menu-item.active{background:#000080;color:#fff;}
+
+/* ── WINDOW BODY ── */
+.window-body{display:flex;min-height:540px;}
+
+/* ── SIDEBAR ── */
+.sidebar{width:190px;border-right:2px inset #808080;background:#D4D0C8;flex-shrink:0;display:flex;flex-direction:column;}
+.sidebar-title{
+  background:#808080;padding:5px 10px;
+  font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;
+  color:#fff;text-transform:uppercase;border-bottom:1px solid #606060;
+}
+.nav-item{
+  display:flex;align-items:center;gap:6px;padding:8px 10px;cursor:pointer;
+  font-family:'JetBrains Mono',monospace;font-size:10px;color:#202020;
+  border-bottom:1px solid rgba(0,0,0,0.06);user-select:none;
+}
+.nav-item:hover,.nav-item.active{background:#000080;color:#fff;}
+.nav-icon{
+  width:14px;height:14px;flex-shrink:0;background:#C0C0C0;
+  border-top:1px solid #fff;border-left:1px solid #fff;
+  border-right:1px solid #808080;border-bottom:1px solid #808080;
+  font-size:8px;display:flex;align-items:center;justify-content:center;
+}
+.nav-item:hover .nav-icon,.nav-item.active .nav-icon{background:#6060C0;color:#fff;}
+.sidebar-divider{height:1px;background:#808080;margin:8px 0;}
+.sys-panel{padding:8px 10px;}
+.sys-row{
+  display:flex;justify-content:space-between;
+  font-family:'JetBrains Mono',monospace;font-size:9px;color:#404040;padding:2px 0;
+}
+.sys-val{color:#000080;font-weight:500;}
+.sidebar-cta{
+  margin:10px;
+  background:#000080;color:#fff;
+  font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1px;
+  text-transform:uppercase;padding:8px 10px;cursor:pointer;text-align:center;
+  border-top:1px solid #4040A0;border-left:1px solid #4040A0;
+  border-right:1px solid #000040;border-bottom:1px solid #000040;
+}
+.sidebar-cta:hover{background:#0000A0;}
+.sidebar-spacer{flex:1;}
+
+/* ── MAIN ── */
+.main{flex:1;padding:22px 28px;background:#C0C0C0;overflow:hidden;}
+.panel{display:none;}
+.panel.active{display:block;}
+
+/* ── STATUS ROW ── */
+.statusbar-row{display:flex;align-items:center;gap:8px;margin-bottom:16px;}
+.status-pill{
+  font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;
+  text-transform:uppercase;background:#000080;color:#fff;padding:2px 8px;
+}
+.status-path{font-family:'JetBrains Mono',monospace;font-size:9px;color:#606060;letter-spacing:1px;}
+.status-blink{
+  width:6px;height:6px;border-radius:50%;background:#000080;
+  animation:blink 1.2s infinite;margin-left:auto;
+}
+
+/* ── HOME HERO ── */
+.home-hero{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:start;margin-bottom:16px;}
+.hero-name{
+  font-family:'Barlow Condensed',sans-serif;font-size:64px;font-weight:700;
+  color:#0a0a0a;line-height:0.88;letter-spacing:-1px;text-transform:uppercase;margin-bottom:4px;
+}
+.hero-name span{color:#000080;}
+.hero-title{
+  font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:300;
+  letter-spacing:6px;text-transform:uppercase;color:#505050;margin-bottom:0;padding-left:3px;
+}
+.hero-tagline-box{
+  border-top:2px solid #808080;border-left:2px solid #808080;
+  border-right:2px solid #fff;border-bottom:2px solid #fff;
+  padding:12px 16px;background:#D4D0C8;min-width:200px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.htb-label{font-family:'JetBrains Mono',monospace;font-size:8px;color:#606060;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
+.htb-line{font-family:'IBM Plex Sans',sans-serif;font-size:11px;color:#101010;font-weight:300;line-height:1.55;padding:2px 0;border-bottom:1px dotted #a0a0a0;}
+.htb-line:last-child{border-bottom:none;}
+
+.rule{height:2px;background:linear-gradient(90deg,#000080 0%,#808080 55%,transparent 100%);margin:14px 0;}
+
+/* ── STAT STRIP ── */
+.stat-strip{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  border-top:2px solid #808080;border-left:2px solid #808080;
+  border-right:2px solid #fff;border-bottom:2px solid #fff;
+  margin-bottom:16px;
+}
+.stat-cell{
+  padding:10px 14px;border-right:1px solid #a0a0a0;background:#D4D0C8;
+  text-align:center;
+}
+.stat-cell:last-child{border-right:none;}
+.stat-num{
+  font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;
+  color:#000080;line-height:1;
+}
+.stat-label{
+  font-family:'JetBrains Mono',monospace;font-size:8px;color:#606060;
+  letter-spacing:1.5px;text-transform:uppercase;margin-top:3px;
+}
+
+/* ── BIO ── */
+.bio-text{
+  font-family:'IBM Plex Sans',sans-serif;font-size:13px;line-height:1.75;
+  color:#202020;font-weight:300;max-width:540px;margin-bottom:10px;
+}
+.bio-callout{
+  border-left:3px solid #000080;padding:8px 14px;
+  background:#D4D0C8;margin:14px 0;
+  font-family:'IBM Plex Sans',sans-serif;font-size:13px;
+  font-weight:400;color:#0a0a0a;line-height:1.6;font-style:italic;
+  max-width:540px;
+}
+
+/* ── TAGS ── */
+.tag-row{display:flex;gap:5px;flex-wrap:wrap;margin:14px 0;}
+.tag{
+  font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;
+  padding:3px 8px;text-transform:uppercase;color:#fff;background:#606060;
+  border-top:1px solid #909090;border-left:1px solid #909090;
+  border-right:1px solid #303030;border-bottom:1px solid #303030;
+}
+
+/* ── HOME GRID (two cols) ── */
+.home-bottom{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px;}
+
+/* ── DATA GRID ── */
+.data-grid{border-top:2px solid #808080;border-left:2px solid #808080;border-right:2px solid #fff;border-bottom:2px solid #fff;}
+.grid-head{
+  background:#000080;padding:5px 12px;
+  font-family:'JetBrains Mono',monospace;font-size:9px;color:#fff;
+  letter-spacing:2px;text-transform:uppercase;display:flex;justify-content:space-between;
+}
+a.grid-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:7px 12px;border-bottom:1px solid #b0b0b0;
+  font-family:'IBM Plex Sans',sans-serif;font-size:11px;color:#202020;
+  font-weight:300;cursor:pointer;text-decoration:none;
+}
+a.grid-row:last-child{border-bottom:none;}
+a.grid-row:hover{background:#000080;color:#fff;}
+a.grid-row:hover .gbadge{background:#fff;color:#000080;}
+.gbadge{
+  font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1px;
+  padding:2px 6px;text-transform:uppercase;background:#606060;color:#fff;
+  flex-shrink:0;margin-left:8px;
+}
+
+/* ── SERVICES QUICK LIST ── */
+.svc-quick{border-top:2px solid #808080;border-left:2px solid #808080;border-right:2px solid #fff;border-bottom:2px solid #fff;}
+.svc-quick-row{
+  display:flex;align-items:center;gap:10px;
+  padding:7px 12px;border-bottom:1px solid #b0b0b0;cursor:pointer;
+  font-family:'IBM Plex Sans',sans-serif;font-size:11px;color:#202020;font-weight:300;
+}
+.svc-quick-row:last-child{border-bottom:none;}
+.svc-quick-row:hover{background:#000080;color:#fff;}
+.svc-quick-row:hover .svc-num-sm{color:#fff;}
+.svc-num-sm{font-family:'JetBrains Mono',monospace;font-size:9px;color:#000080;letter-spacing:1px;flex-shrink:0;}
+
+/* ── SECT HEADINGS ── */
+.sect-title{font-family:'Barlow Condensed',sans-serif;font-size:40px;font-weight:600;color:#0a0a0a;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px;}
+.sect-sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#606060;margin-bottom:18px;}
+
+/* ── PROJECTS ── */
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+a.proj-card{
+  border-top:2px solid #fff;border-left:2px solid #fff;
+  border-right:2px solid #808080;border-bottom:2px solid #808080;
+  padding:14px 16px;background:#D4D0C8;display:block;text-decoration:none;
+}
+a.proj-card:hover{background:#C0BEBA;}
+a.proj-card:hover .proj-title{color:#000080;}
+.proj-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1px;}
+.proj-title{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:600;color:#0a0a0a;letter-spacing:0.5px;text-transform:uppercase;}
+.proj-url{font-family:'JetBrains Mono',monospace;font-size:8px;color:#000080;margin-bottom:7px;}
+.proj-desc{font-family:'IBM Plex Sans',sans-serif;font-size:11px;color:#303030;font-weight:300;line-height:1.6;}
+.proj-tags{display:flex;gap:4px;margin-top:9px;flex-wrap:wrap;}
+.badge-ai{background:#000080;}.badge-seo{background:#006060;}.badge-bio{background:#402060;}.badge-chain{background:#604000;}.badge-infra{background:#204040;}
+
+/* ── SERVICES ── */
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.svc-card{border-top:2px solid #fff;border-left:2px solid #fff;border-right:2px solid #808080;border-bottom:2px solid #808080;padding:16px 18px;background:#D4D0C8;}
+.svc-card:hover{background:#C8C4BC;}
+.svc-num{font-family:'JetBrains Mono',monospace;font-size:9px;color:#000080;letter-spacing:2px;margin-bottom:6px;}
+.svc-title{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:600;color:#0a0a0a;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;}
+.svc-desc{font-family:'IBM Plex Sans',sans-serif;font-size:11px;color:#303030;font-weight:300;line-height:1.65;}
+
+/* ── STACK ── */
+.stack-category{margin-bottom:18px;border-top:2px solid #808080;border-left:2px solid #808080;border-right:2px solid #fff;border-bottom:2px solid #fff;}
+.stack-cat-label{background:#000080;padding:5px 12px;font-family:'JetBrains Mono',monospace;font-size:9px;color:#fff;letter-spacing:2px;}
+.stack-row{display:grid;grid-template-columns:repeat(5,1fr);}
+.stack-item{padding:10px 12px;border-right:1px solid #b0b0b0;background:#D4D0C8;}
+.stack-item:last-child{border-right:none;}
+.stack-name{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;color:#0a0a0a;margin-bottom:2px;}
+.stack-role{font-family:'JetBrains Mono',monospace;font-size:8px;color:#606060;letter-spacing:0.5px;}
+
+/* ── EXPERIENCE ── */
+.exp-entry{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid #909090;}
+.exp-entry:last-child{border-bottom:none;}
+.exp-year{font-family:'JetBrains Mono',monospace;font-size:9px;color:#000080;letter-spacing:1px;padding-top:3px;}
+.exp-role{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:600;color:#0a0a0a;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:2px;}
+.exp-co{font-family:'JetBrains Mono',monospace;font-size:9px;color:#000080;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px;}
+.exp-desc{font-family:'IBM Plex Sans',sans-serif;font-size:11px;color:#303030;font-weight:300;line-height:1.65;}
+
+/* ── CONTACT ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:8px;}
+.contact-card{border-top:2px solid #fff;border-left:2px solid #fff;border-right:2px solid #808080;border-bottom:2px solid #808080;padding:14px 16px;background:#D4D0C8;cursor:pointer;}
+.contact-card:hover{background:#C8C4BC;}
+.contact-label{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#000080;margin-bottom:5px;}
+.contact-val{font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#101010;font-weight:300;}
+
+/* ── WIN STATUSBAR ── */
+.win-statusbar{border-top:2px solid #808080;background:#C0C0C0;display:flex;justify-content:space-between;}
+.wsb-left{display:flex;}
+.wsb-right{display:flex;}
+.wsb-cell{padding:3px 12px;font-family:'JetBrains Mono',monospace;font-size:9px;color:#303030;letter-spacing:0.5px;border-right:1px solid #909090;}
+.wsb-cell:last-child{border-right:none;}
+.wsb-cell.teal{color:#000080;font-weight:500;}
+
+/* ── FOOTER ── */
+.footer{
+  max-width:960px;margin:0 auto;
+  padding:14px 0 20px;
+  display:grid;grid-template-columns:1fr auto 1fr;
+  gap:16px;align-items:start;
+}
+.footer-col-left{display:flex;flex-direction:column;gap:5px;}
+.footer-col-center{display:flex;flex-direction:column;align-items:center;gap:5px;}
+.footer-col-right{display:flex;flex-direction:column;align-items:flex-end;gap:5px;}
+.footer-label{
+  font-family:'JetBrains Mono',monospace;font-size:8px;
+  color:rgba(255,255,255,0.3);letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;
+}
+.footer-link{
+  font-family:'JetBrains Mono',monospace;font-size:9px;
+  color:rgba(255,255,255,0.45);letter-spacing:0.5px;cursor:pointer;
+  text-decoration:none;display:block;padding:1px 0;
+}
+.footer-link:hover{color:rgba(255,255,255,0.8);}
+.footer-copy{
+  font-family:'JetBrains Mono',monospace;font-size:8px;
+  color:rgba(255,255,255,0.2);letter-spacing:1px;text-align:center;
+  margin-top:4px;
+}
+.footer-logo{
+  font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;
+  color:rgba(255,255,255,0.3);letter-spacing:2px;text-transform:uppercase;
+}
+.footer-logo span{color:rgba(0,200,255,0.35);}
+.footer-built{
+  font-family:'JetBrains Mono',monospace;font-size:8px;
+  color:rgba(255,255,255,0.18);letter-spacing:1px;text-transform:uppercase;
+}
+
+/* ── BOOT ── */
+.boot-overlay{position:fixed;inset:0;background:#000080;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;color:#fff;transition:opacity 0.5s;}
+.boot-overlay.hidden{opacity:0;pointer-events:none;}
+.boot-logo{font-family:'Barlow Condensed',sans-serif;font-size:56px;font-weight:700;letter-spacing:2px;margin-bottom:24px;}
+.boot-logo span{color:#00C8FF;}
+.boot-lines{font-size:11px;color:rgba(255,255,255,0.6);text-align:left;width:360px;letter-spacing:0.5px;max-height:180px;overflow:hidden;}
+.boot-line{padding:2px 0;opacity:0;transition:opacity 0.3s;}
+.boot-line.show{opacity:1;}
+.boot-bar-wrap{margin-top:20px;width:360px;height:3px;background:rgba(255,255,255,0.12);}
+.boot-bar{height:3px;background:#00C8FF;width:0%;transition:width 0.15s linear;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:780px){
+  .header{flex-direction:column;gap:10px;}
+  .header-center{justify-content:flex-start;}
+  .header-right{align-items:flex-start;}
+  .sidebar{display:none;}
+  .proj-grid,.svc-grid,.home-bottom{grid-template-columns:1fr;}
+  .stat-strip{grid-template-columns:1fr 1fr;}
+  .stack-row{grid-template-columns:1fr 1fr;}
+  .contact-grid{grid-template-columns:1fr 1fr;}
+  .home-hero{grid-template-columns:1fr;}
+  .footer{grid-template-columns:1fr;gap:12px;}
+  .footer-col-right{align-items:flex-start;}
+  .titlebar-meta{display:none;}
+  .main{padding:16px;}
+}
+</style>
+</head>
+<body>
+
+<!-- BOOT -->
+<div class="boot-overlay" id="boot">
+  <div class="boot-logo">VIRTUAL<span>MASE</span></div>
+  <div class="boot-lines" id="boot-lines"></div>
+  <div class="boot-bar-wrap"><div class="boot-bar" id="boot-bar"></div></div>
+</div>
+
+<!-- ══ HEADER ══ -->
+<header class="header">
+  <div class="header-left">
+    <div class="header-brand">VIRTUAL<span>MASE</span></div>
+    <div class="header-tagline">SEO Strategist &amp; Systems Architect // United States</div>
+  </div>
+
+  <div class="header-center">
+    <div class="hstat"><div class="hstat-val">8</div><div class="hstat-label">Projects</div></div>
+    <div class="hstat"><div class="hstat-val">200+</div><div class="hstat-label">Clients</div></div>
+    <div class="hstat"><div class="hstat-val">50K+</div><div class="hstat-label">Agents</div></div>
+    <div class="hstat"><div class="hstat-val">+340%</div><div class="hstat-label">LLM Citations</div></div>
+    <div class="hstat"><div class="hstat-val">99.99%</div><div class="hstat-label">Uptime SLA</div></div>
+  </div>
+
+  <div class="header-right">
+    <div class="header-avail"><span class="avail-dot"></span>Open for Engagements — Q2 2026</div>
+    <div class="header-contact-item"><span class="hci-label">Ph</span>(949) 288-8088</div>
+    <div class="header-contact-item"><span class="hci-label">Em</span>mason@au-re.org</div>
+    <div class="header-contact-item"><span class="hci-label">Sys</span><span id="hdr-clock">--:-- --</span></div>
+  </div>
+</header>
+
+<!-- ══ WINDOW ══ -->
+<div class="window">
+
+  <!-- TITLEBAR -->
+  <div class="titlebar">
+    <div class="titlebar-left">
+      <div class="titlebar-icon">V</div>
+      <div class="titlebar-title">VIRTUALMASE — PORTFOLIO.EXE</div>
+    </div>
+    <div class="titlebar-right">
+      <div class="titlebar-meta">
+        <span>BUILD v5.0</span>
+        <span>8 PROJECTS</span>
+        <span id="tb-clock">--:--:--</span>
+      </div>
+      <div class="win-controls">
+        <div class="win-btn">_</div>
+        <div class="win-btn">□</div>
+        <div class="win-btn">✕</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MENUBAR -->
+  <div class="menubar">
+    <div class="menu-item active" data-panel="home"       onclick="sp(this)">Home</div>
+    <div class="menu-item"        data-panel="projects"   onclick="sp(this)">Projects</div>
+    <div class="menu-item"        data-panel="services"   onclick="sp(this)">Services</div>
+    <div class="menu-item"        data-panel="stack"      onclick="sp(this)">Stack</div>
+    <div class="menu-item"        data-panel="experience" onclick="sp(this)">Experience</div>
+    <div class="menu-item"        data-panel="contact"    onclick="sp(this)">Contact</div>
+  </div>
+
+  <!-- WINDOW BODY -->
+  <div class="window-body">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="sidebar-title">Root Dir</div>
+      <div class="nav-item active" data-panel="home"       onclick="sp(this)"><div class="nav-icon">H</div>HOME</div>
+      <div class="nav-item"        data-panel="projects"   onclick="sp(this)"><div class="nav-icon">P</div>PROJECTS</div>
+      <div class="nav-item"        data-panel="services"   onclick="sp(this)"><div class="nav-icon">S</div>SERVICES</div>
+      <div class="nav-item"        data-panel="stack"      onclick="sp(this)"><div class="nav-icon">T</div>STACK</div>
+      <div class="nav-item"        data-panel="experience" onclick="sp(this)"><div class="nav-icon">E</div>EXPERIENCE</div>
+      <div class="nav-item"        data-panel="contact"    onclick="sp(this)"><div class="nav-icon">C</div>CONTACT</div>
+      <div class="sidebar-divider"></div>
+      <div class="sys-panel">
+        <div class="sys-row"><span>PROJECTS</span><span class="sys-val">8 ACTIVE</span></div>
+        <div class="sys-row"><span>UPTIME</span><span class="sys-val" id="up">0s</span></div>
+        <div class="sys-row"><span>BUILD</span><span class="sys-val">v5.0.0</span></div>
+        <div class="sys-row"><span>LOC</span><span class="sys-val">USA</span></div>
+        <div class="sys-row"><span>STATUS</span><span class="sys-val">ONLINE</span></div>
+      </div>
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-cta" onclick="sp(document.querySelector('[data-panel=contact]'))">→ CONTACT</div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+
+      <!-- ══ HOME ══ -->
+      <div class="panel active" id="panel-home">
+        <div class="statusbar-row">
+          <div class="status-pill">ONLINE</div>
+          <div class="status-path">C:\VIRTUALMASE\HOME</div>
+          <div class="status-blink"></div>
+        </div>
+
+        <!-- Hero -->
+        <div class="home-hero">
+          <div>
+            <div class="hero-name">VIRTUAL<span>MASE</span></div>
+            <div class="hero-title">SEO Strategist &amp; Systems Architect</div>
+          </div>
+          <div class="hero-tagline-box">
+            <div class="htb-label">Specializations</div>
+            <div class="htb-line">Agentic AI Infrastructure</div>
+            <div class="htb-line">Generative Search Optimization</div>
+            <div class="htb-line">On-Chain Intelligence</div>
+            <div class="htb-line">AI-Native Brand Signal</div>
+            <div class="htb-line">Systems Architecture</div>
+          </div>
+        </div>
+
+        <div class="rule"></div>
+
+        <!-- Stat strip -->
+        <div class="stat-strip">
+          <div class="stat-cell"><div class="stat-num">8</div><div class="stat-label">Active Projects</div></div>
+          <div class="stat-cell"><div class="stat-num">200+</div><div class="stat-label">Enterprise Clients</div></div>
+          <div class="stat-cell"><div class="stat-num">50K+</div><div class="stat-label">Agents Deployed</div></div>
+          <div class="stat-cell"><div class="stat-num">+340%</div><div class="stat-label">LLM Citation Growth</div></div>
+        </div>
+
+        <!-- Bio -->
+        <p class="bio-text">Senior SEO strategist and systems architect operating at the frontier of agentic AI, generative search optimization, and autonomous systems. Building the infrastructure layer that other AI systems run on — from durable execution fabrics to machine-readable brand architectures.</p>
+
+        <div class="bio-callout">
+          "Not just building on top of AI — building the infrastructure layer the agentic internet runs on."
+        </div>
+
+        <div class="tag-row">
+          <div class="tag">Agentic AI</div>
+          <div class="tag">GSO / AIO</div>
+          <div class="tag">Systems Architecture</div>
+          <div class="tag">Technical SEO</div>
+          <div class="tag">Blockchain</div>
+          <div class="tag">Longevity Tech</div>
+          <div class="tag">MCP / A2A</div>
+          <div class="tag">United States</div>
+        </div>
+
+        <!-- Two-column bottom -->
+        <div class="home-bottom">
+
+          <div class="data-grid">
+            <div class="grid-head"><span>PROJECT REGISTRY</span><span>DOMAIN</span></div>
+            <a class="grid-row" href="https://au-re.org"                          target="_blank"><span>AURE // AI-Native Signal Architecture</span><span class="gbadge">au-re.org</span></a>
+            <a class="grid-row" href="https://arm-agency.com"                     target="_blank"><span>ARM Agents // Agentic AI OS</span><span class="gbadge">arm-agency.com</span></a>
+            <a class="grid-row" href="https://autonomousresourcemanagement.com"   target="_blank"><span>ARM Definition // Canonical Reference</span><span class="gbadge">.com</span></a>
+            <a class="grid-row" href="https://autonomousresourcemanagement.xyz"   target="_blank"><span>ARM Signal // Brand Signal Arch</span><span class="gbadge">.xyz</span></a>
+            <a class="grid-row" href="https://monumentlabs.space"                 target="_blank"><span>Monument Labs // Longevity OS</span><span class="gbadge">.space</span></a>
+            <a class="grid-row" href="https://blockchainanalytics.space"          target="_blank"><span>Blockchain Analytics // On-Chain</span><span class="gbadge">.space</span></a>
+            <a class="grid-row" href="https://swellmarketing.xyz"                 target="_blank"><span>Swell Marketing // GSO + SEO</span><span class="gbadge">.xyz</span></a>
+            <a class="grid-row" href="https://darkgemini.com"                     target="_blank"><span>Dark Gemini // 5D/8D Autonomous AI</span><span class="gbadge">.com</span></a>
+          </div>
+
+          <div class="svc-quick">
+            <div class="grid-head"><span>SERVICES</span><span>CATEGORY</span></div>
+            <div class="svc-quick-row" onclick="sp(document.querySelector('[data-panel=services]'))"><span class="svc-num-sm">01</span><span>Generative Search Optimization</span><span class="gbadge badge-seo">GSO</span></div>
+            <div class="svc-quick-row" onclick="sp(document.querySelector('[data-panel=services]'))"><span class="svc-num-sm">02</span><span>Agentic Systems Architecture</span><span class="gbadge badge-ai">AI</span></div>
+            <div class="svc-quick-row" onclick="sp(document.querySelector('[data-panel=services]'))"><span class="svc-num-sm">03</span><span>Technical SEO Strategy</span><span class="gbadge badge-seo">SEO</span></div>
+            <div class="svc-quick-row" onclick="sp(document.querySelector('[data-panel=services]'))"><span class="svc-num-sm">04</span><span>AI-Native Brand Signal</span><span class="gbadge badge-infra">Signal</span></div>
+            <div class="svc-quick-row" onclick="sp(document.querySelector('[data-panel=services]'))"><span class="svc-num-sm">05</span><span>On-Chain Intelligence</span><span class="gbadge badge-chain">Chain</span></div>
+            <div class="svc-quick-row" onclick="sp(document.querySelector('[data-panel=services]'))"><span class="svc-num-sm">06</span><span>Systems Infrastructure &amp; DevOps</span><span class="gbadge badge-infra">Infra</span></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══ PROJECTS ══ -->
+      <div class="panel" id="panel-projects">
+        <div class="statusbar-row"><div class="status-pill">DIR</div><div class="status-path">C:\VIRTUALMASE\PROJECTS [8 FILES]</div></div>
+        <div class="sect-title">Projects</div>
+        <div class="sect-sub">8 active builds &amp; live deployments</div>
+        <div class="proj-grid">
+          <a class="proj-card" href="https://au-re.org" target="_blank">
+            <div class="proj-header"><div class="proj-title">AURE</div><div class="gbadge badge-ai">AI Infra</div></div>
+            <div class="proj-url">au-re.org</div>
+            <div class="proj-desc">AI-native signal architecture and enterprise brand strategy. Makes organizations legible to autonomous systems. 200+ enterprise clients, 50K+ agents in production, 99.99% uptime SLA.</div>
+            <div class="proj-tags"><div class="tag">Signal Arch</div><div class="tag">GSO</div><div class="tag">Knowledge Graphs</div><div class="tag">LLM Citations</div></div>
+          </a>
+          <a class="proj-card" href="https://arm-agency.com" target="_blank">
+            <div class="proj-header"><div class="proj-title">ARM Agents</div><div class="gbadge badge-ai">Agentic OS</div></div>
+            <div class="proj-url">arm-agency.com</div>
+            <div class="proj-desc">The Agentic AI Operating System. Protocol-native MCP / A2A / ACP with zero-loss resilience, carbon-aware orchestration, and human-aligned safety by design. 99.99% Recovery SLA.</div>
+            <div class="proj-tags"><div class="tag">MCP</div><div class="tag">A2A</div><div class="tag">Swarm</div><div class="tag">BFT</div></div>
+          </a>
+          <a class="proj-card" href="https://autonomousresourcemanagement.com" target="_blank">
+            <div class="proj-header"><div class="proj-title">ARM Definition</div><div class="gbadge badge-infra">Reference</div></div>
+            <div class="proj-url">autonomousresourcemanagement.com</div>
+            <div class="proj-desc">The canonical technical definition and framework for Autonomous Resource Management — AI-native systems that self-allocate resources using autonomous decision loops with verifiable audit trails.</div>
+            <div class="proj-tags"><div class="tag">ARM</div><div class="tag">Framework</div><div class="tag">Entity Record</div><div class="tag">Signal Stack</div></div>
+          </a>
+          <a class="proj-card" href="https://autonomousresourcemanagement.xyz" target="_blank">
+            <div class="proj-header"><div class="proj-title">ARM Signal</div><div class="gbadge badge-seo">Brand Signal</div></div>
+            <div class="proj-url">autonomousresourcemanagement.xyz</div>
+            <div class="proj-desc">AI-native brand signal architecture for capital markets. Transforms brand presence into structured, machine-readable knowledge graphs trusted by investors and autonomous systems alike.</div>
+            <div class="proj-tags"><div class="tag">SignalStack</div><div class="tag">AIO</div><div class="tag">Capital</div><div class="tag">VC</div></div>
+          </a>
+          <a class="proj-card" href="https://monumentlabs.space" target="_blank">
+            <div class="proj-header"><div class="proj-title">Monument Labs</div><div class="gbadge badge-bio">Longevity</div></div>
+            <div class="proj-url">monumentlabs.space</div>
+            <div class="proj-desc">Institutional Longevity OS. Predictive intelligence and precision synthesis for human healthspan. Norvoc AI core, Katin Synthesis delivery. Active nodes: Irvine, Monument, Helsinki, Singapore.</div>
+            <div class="proj-tags"><div class="tag">BioTech</div><div class="tag">Norvoc AI</div><div class="tag">Katin Synthesis</div><div class="tag">GMP</div></div>
+          </a>
+          <a class="proj-card" href="https://blockchainanalytics.space" target="_blank">
+            <div class="proj-header"><div class="proj-title">Blockchain Analytics</div><div class="gbadge badge-chain">On-Chain</div></div>
+            <div class="proj-url">blockchainanalytics.space</div>
+            <div class="proj-desc">Institutional on-chain intelligence. Wallet clustering, AML/OFAC screening, real-time anomaly detection. Sub-12ms latency. Built on Next.js 16, Hypersync, and ClickHouse.</div>
+            <div class="proj-tags"><div class="tag">AML</div><div class="tag">OFAC</div><div class="tag">Hypersync</div><div class="tag">ClickHouse</div></div>
+          </a>
+          <a class="proj-card" href="https://swellmarketing.xyz" target="_blank">
+            <div class="proj-header"><div class="proj-title">Swell Marketing</div><div class="gbadge badge-seo">GSO / SEO</div></div>
+            <div class="proj-url">swellmarketing.xyz</div>
+            <div class="proj-desc">Directed intelligence for the AI-first web. Entity-first systems that make brands canonical inside ChatGPT, Claude, Gemini, and Perplexity. +340% LLM citations. Home of the 2026 GSO Roadmap.</div>
+            <div class="proj-tags"><div class="tag">LLM Citations</div><div class="tag">Entity Mapping</div><div class="tag">GSO</div><div class="tag">Academy</div></div>
+          </a>
+          <a class="proj-card" href="https://darkgemini.com" target="_blank">
+            <div class="proj-header"><div class="proj-title">Dark Gemini</div><div class="gbadge badge-ai">Autonomous</div></div>
+            <div class="proj-url">darkgemini.com</div>
+            <div class="proj-desc">5D/8D autonomous intelligence across quantum-scaled decentralized networks. Pushing the frontier of multi-dimensional AI reasoning and decentralized cognitive architectures.</div>
+            <div class="proj-tags"><div class="tag">5D/8D AI</div><div class="tag">Quantum</div><div class="tag">Decentralized</div><div class="tag">Cognitive Arch</div></div>
+          </a>
+        </div>
+      </div>
+
+      <!-- ══ SERVICES ══ -->
+      <div class="panel" id="panel-services">
+        <div class="statusbar-row"><div class="status-pill">DIR</div><div class="status-path">C:\VIRTUALMASE\SERVICES</div></div>
+        <div class="sect-title">Services</div>
+        <div class="sect-sub">What I build &amp; deliver</div>
+        <div class="svc-grid">
+          <div class="svc-card"><div class="svc-num">01</div><div class="svc-title">Generative Search Optimization</div><div class="svc-desc">Entity-first architecture that makes brands the canonical source inside ChatGPT, Claude, Gemini, and Perplexity. Schema orchestration, knowledge graph engineering, and LLM citation strategy.</div><div class="proj-tags" style="margin-top:10px;"><div class="tag">GSO</div><div class="tag">AIO</div><div class="tag">Entity Mapping</div><div class="tag">Schema</div></div></div>
+          <div class="svc-card"><div class="svc-num">02</div><div class="svc-title">Agentic Systems Architecture</div><div class="svc-desc">Design and deployment of agentic AI workflows — from single-agent pipelines to multi-agent swarms. MCP/A2A protocol integration, mandate chain design, Byzantine Fault Tolerance, and durable execution fabrics.</div><div class="proj-tags" style="margin-top:10px;"><div class="tag">MCP</div><div class="tag">A2A</div><div class="tag">Swarm Design</div><div class="tag">BFT</div></div></div>
+          <div class="svc-card"><div class="svc-num">03</div><div class="svc-title">Technical SEO Strategy</div><div class="svc-desc">Enterprise-level organic growth — site architecture, crawl optimization, Core Web Vitals, structured data, and content signal frameworks built to compound over time and survive every algorithm shift.</div><div class="proj-tags" style="margin-top:10px;"><div class="tag">Technical SEO</div><div class="tag">CWV</div><div class="tag">Structured Data</div></div></div>
+          <div class="svc-card"><div class="svc-num">04</div><div class="svc-title">AI-Native Brand Signal</div><div class="svc-desc">Full SignalStack™ implementation — canonical source establishment, high-trust directory syndication, semantic brand structuring, and AI confidence score optimization. Brands built to be trusted by machines.</div><div class="proj-tags" style="margin-top:10px;"><div class="tag">SignalStack</div><div class="tag">Brand Arch</div><div class="tag">Knowledge Graph</div></div></div>
+          <div class="svc-card"><div class="svc-num">05</div><div class="svc-title">On-Chain Intelligence</div><div class="svc-desc">Blockchain analytics for institutional clients — wallet clustering, AML/OFAC screening, real-time anomaly detection, and forensic chain analysis. Powered by Hypersync and ClickHouse.</div><div class="proj-tags" style="margin-top:10px;"><div class="tag">AML</div><div class="tag">Forensics</div><div class="tag">Real-Time</div></div></div>
+          <div class="svc-card"><div class="svc-num">06</div><div class="svc-title">Systems Infrastructure &amp; DevOps</div><div class="svc-desc">Infrastructure-as-Code, CI/CD pipeline architecture, and dApp deployment engineering. Repeatable, auditable processes for high-frequency digital ecosystems at any scale.</div><div class="proj-tags" style="margin-top:10px;"><div class="tag">Terraform</div><div class="tag">CI/CD</div><div class="tag">IaC</div><div class="tag">DevOps</div></div></div>
+        </div>
+      </div>
+
+      <!-- ══ STACK ══ -->
+      <div class="panel" id="panel-stack">
+        <div class="statusbar-row"><div class="status-pill">DIR</div><div class="status-path">C:\VIRTUALMASE\STACK</div></div>
+        <div class="sect-title">Stack</div>
+        <div class="sect-sub">Tools, frameworks &amp; infrastructure</div>
+        <div class="stack-category"><div class="stack-cat-label">AI &amp; AGENTIC</div><div class="stack-row"><div class="stack-item"><div class="stack-name">MCP</div><div class="stack-role">Model Context Protocol</div></div><div class="stack-item"><div class="stack-name">A2A / ACP</div><div class="stack-role">Agent-to-Agent Protocol</div></div><div class="stack-item"><div class="stack-name">PyTorch</div><div class="stack-role">ML / Anomaly Detection</div></div><div class="stack-item"><div class="stack-name">Bittensor</div><div class="stack-role">Decentralized ML</div></div><div class="stack-item"><div class="stack-name">OpenAI / Claude</div><div class="stack-role">LLM Orchestration</div></div></div></div>
+        <div class="stack-category"><div class="stack-cat-label">DATA &amp; ANALYTICS</div><div class="stack-row"><div class="stack-item"><div class="stack-name">ClickHouse</div><div class="stack-role">Real-Time Analytics DB</div></div><div class="stack-item"><div class="stack-name">Hypersync</div><div class="stack-role">Rust Blockchain Indexer</div></div><div class="stack-item"><div class="stack-name">BigQuery</div><div class="stack-role">Multi-Cloud Serverless AI</div></div><div class="stack-item"><div class="stack-name">Python</div><div class="stack-role">Data Engineering</div></div><div class="stack-item"><div class="stack-name">Wasm</div><div class="stack-role">Edge Sandboxing</div></div></div></div>
+        <div class="stack-category"><div class="stack-cat-label">FRONTEND &amp; WEB</div><div class="stack-row"><div class="stack-item"><div class="stack-name">Next.js 16</div><div class="stack-role">SSR / React Compiler</div></div><div class="stack-item"><div class="stack-name">Webflow</div><div class="stack-role">AI-Parseable Experiences</div></div><div class="stack-item"><div class="stack-name">Remix</div><div class="stack-role">Spatial Web Interfaces</div></div><div class="stack-item"><div class="stack-name">Schema.org</div><div class="stack-role">Structured Data / JSON-LD</div></div><div class="stack-item"><div class="stack-name">Cloudflare</div><div class="stack-role">Edge / CDN / DNS</div></div></div></div>
+        <div class="stack-category"><div class="stack-cat-label">INFRASTRUCTURE</div><div class="stack-row"><div class="stack-item"><div class="stack-name">Terraform</div><div class="stack-role">IaC Orchestration</div></div><div class="stack-item"><div class="stack-name">GitHub Actions</div><div class="stack-role">Auditable CI/CD</div></div><div class="stack-item"><div class="stack-name">GSO Framework</div><div class="stack-role">2026 Roadmap</div></div><div class="stack-item"><div class="stack-name">SignalStack™</div><div class="stack-role">AI Brand Architecture</div></div><div class="stack-item"><div class="stack-name">GSC / GA4</div><div class="stack-role">Search Intelligence</div></div></div></div>
+      </div>
+
+      <!-- ══ EXPERIENCE ══ -->
+      <div class="panel" id="panel-experience">
+        <div class="statusbar-row"><div class="status-pill">DIR</div><div class="status-path">C:\VIRTUALMASE\EXPERIENCE</div></div>
+        <div class="sect-title">Experience</div>
+        <div class="sect-sub">Professional history</div>
+        <div class="exp-entry"><div class="exp-year">2024 — NOW</div><div><div class="exp-role">Founder &amp; Systems Architect</div><div class="exp-co">AURE // au-re.org // United States</div><div class="exp-desc">Building AI-native signal infrastructure and enterprise brand strategy for organizations in the agentic era. 200+ enterprise clients across 12 industries. 50K+ agents deployed in active production with 99.99% uptime SLA.</div></div></div>
+        <div class="exp-entry"><div class="exp-year">2023 — NOW</div><div><div class="exp-role">Senior SEO Strategist</div><div class="exp-co">Swell Marketing // swellmarketing.xyz</div><div class="exp-desc">Directing GSO and entity-first SEO strategy across health, fintech, and enterprise SaaS. +340% LLM citation growth, +180% organic from AI sources. Architect of the 2026 GSO Roadmap and the Swell Academy education platform.</div></div></div>
+        <div class="exp-entry"><div class="exp-year">2023 — NOW</div><div><div class="exp-role">Co-Founder</div><div class="exp-co">ARM Agents // arm-agency.com</div><div class="exp-desc">Building the Agentic AI Operating System — a durable execution fabric for the Agentic Internet Era with protocol-native MCP/A2A integration, zero-loss resilience, Byzantine Fault Tolerance, and human-aligned safety by design.</div></div></div>
+        <div class="exp-entry"><div class="exp-year">2021 — 2023</div><div><div class="exp-role">Independent Systems Architect</div><div class="exp-co">Consulting</div><div class="exp-desc">Designed and deployed digital infrastructure across wellness, media, and e-commerce. Foundational work that seeded Monument Labs, Blockchain Analytics, and the ARM signal architecture framework.</div></div></div>
+      </div>
+
+      <!-- ══ CONTACT ══ -->
+      <div class="panel" id="panel-contact">
+        <div class="statusbar-row"><div class="status-pill">DIR</div><div class="status-path">C:\VIRTUALMASE\CONTACT</div></div>
+        <div class="sect-title">Contact</div>
+        <div class="sect-sub">Open to collaboration &amp; consulting</div>
+        <p class="bio-text">Available for consulting engagements, strategic partnerships, and select project builds across agentic AI, GSO, systems architecture, and blockchain intelligence.</p>
+        <div class="contact-grid">
+          <div class="contact-card"><div class="contact-label">Phone</div><div class="contact-val">(949) 288-8088</div></div>
+          <div class="contact-card"><div class="contact-label">Email</div><div class="contact-val">mason@au-re.org</div></div>
+          <div class="contact-card"><div class="contact-label">Primary Hub</div><div class="contact-val">au-re.org</div></div>
+          <div class="contact-card"><div class="contact-label">Location</div><div class="contact-val">United States of America</div></div>
+          <div class="contact-card"><div class="contact-label">Availability</div><div class="contact-val">Open — Q2 2026</div></div>
+          <div class="contact-card"><div class="contact-label">LinkedIn</div><div class="contact-val">linkedin.com/in/virtualmase</div></div>
+        </div>
+      </div>
+
+    </div><!-- /main -->
+  </div><!-- /window-body -->
+
+  <!-- WIN STATUSBAR -->
+  <div class="win-statusbar">
+    <div class="wsb-left">
+      <div class="wsb-cell" id="pi">HOME</div>
+      <div class="wsb-cell">VIRTUALMASE.EXE v5.0</div>
+      <div class="wsb-cell teal" id="clock2">--:--</div>
+    </div>
+    <div class="wsb-right">
+      <div class="wsb-cell">8 PROJECTS</div>
+      <div class="wsb-cell">6 SERVICES</div>
+      <div class="wsb-cell teal">● ONLINE</div>
+    </div>
+  </div>
+
+</div><!-- /window -->
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="footer-col-left">
+    <div class="footer-label">Projects</div>
+    <a class="footer-link" href="https://au-re.org" target="_blank">au-re.org</a>
+    <a class="footer-link" href="https://arm-agency.com" target="_blank">arm-agency.com</a>
+    <a class="footer-link" href="https://autonomousresourcemanagement.com" target="_blank">autonomousresourcemanagement.com</a>
+    <a class="footer-link" href="https://autonomousresourcemanagement.xyz" target="_blank">autonomousresourcemanagement.xyz</a>
+    <a class="footer-link" href="https://monumentlabs.space" target="_blank">monumentlabs.space</a>
+    <a class="footer-link" href="https://blockchainanalytics.space" target="_blank">blockchainanalytics.space</a>
+    <a class="footer-link" href="https://swellmarketing.xyz" target="_blank">swellmarketing.xyz</a>
+    <a class="footer-link" href="https://darkgemini.com" target="_blank">darkgemini.com</a>
+  </div>
+
+  <div class="footer-col-center">
+    <div class="footer-logo">VIRTUAL<span>MASE</span></div>
+    <div class="footer-built">SEO Strategist &amp; Systems Architect</div>
+    <div class="footer-built" style="margin-top:4px;">United States of America</div>
+    <div class="footer-copy">© 2026 VIRTUALMASE // ALL RIGHTS RESERVED</div>
+  </div>
+
+  <div class="footer-col-right">
+    <div class="footer-label">Contact</div>
+    <div class="footer-link">(949) 288-8088</div>
+    <a class="footer-link" href="mailto:mason@au-re.org">mason@au-re.org</a>
+    <div style="margin-top:6px;"></div>
+    <div class="footer-label">Connect</div>
+    <a class="footer-link" href="https://www.linkedin.com/company/blockchain-analytics-space" target="_blank">LinkedIn</a>
+    <a class="footer-link" href="https://github.com/Blockchain-Analytics-Space" target="_blank">GitHub</a>
+  </div>
+</footer>
+
+<script>
+function sp(el){
+  document.querySelectorAll('.nav-item,.menu-item').forEach(n=>n.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  const panel=el.dataset.panel;
+  document.querySelectorAll('[data-panel="'+panel+'"]').forEach(n=>n.classList.add('active'));
+  document.getElementById('panel-'+panel).classList.add('active');
+  document.getElementById('pi').textContent=panel.toUpperCase();
+}
+
+const st=Date.now();
+function tick(){
+  const n=new Date();
+  let h=n.getHours(),m=n.getMinutes(),s=n.getSeconds();
+  const ap=h>=12?'PM':'AM'; h=h%12||12;
+  const hh=String(h).padStart(2,'0'), mm=String(m).padStart(2,'0'), ss=String(s).padStart(2,'0');
+  const short=hh+':'+mm+' '+ap;
+  const long=hh+':'+mm+':'+ss;
+  document.getElementById('hdr-clock').textContent=short;
+  document.getElementById('tb-clock').textContent=long;
+  document.getElementById('clock2').textContent=short;
+  const u=Math.floor((Date.now()-st)/1000);
+  document.getElementById('up').textContent=u<60?u+'s':u<3600?Math.floor(u/60)+'m':Math.floor(u/3600)+'h';
+}
+tick(); setInterval(tick,1000);
+
+// Boot
+const bootLines=[
+  'VIRTUALMASE PORTFOLIO SYSTEM v5.0.0',
+  'Initializing signal architecture...',
+  'Loading project registry... [8 FOUND]',
+  'Syncing agentic intelligence layer...',
+  'Mounting stack manifest... [5 CATEGORIES]',
+  'Verifying GSO framework integrity...',
+  'Handshake: au-re.org ✓  arm-agency.com ✓',
+  'Handshake: monumentlabs.space ✓  darkgemini.com ✓',
+  'Handshake: blockchainanalytics.space ✓',
+  'All 8 systems operational.',
+  'BOOT COMPLETE — WELCOME TO VIRTUALMASE.'
+];
+const bl=document.getElementById('boot-lines');
+const bar=document.getElementById('boot-bar');
+let idx=0;
+function nextLine(){
+  if(idx<bootLines.length){
+    const d=document.createElement('div');
+    d.className='boot-line';
+    d.textContent='> '+bootLines[idx];
+    bl.appendChild(d);
+    setTimeout(()=>d.classList.add('show'),30);
+    bar.style.width=Math.round((idx+1)/bootLines.length*100)+'%';
+    idx++;
+    setTimeout(nextLine,idx===bootLines.length?700:140);
+  } else {
+    setTimeout(()=>{
+      document.getElementById('boot').classList.add('hidden');
+      setTimeout(()=>document.getElementById('boot').remove(),600);
+    },400);
+  }
+}
+setTimeout(nextLine,300);
+</script>
+</body>
+</html>
