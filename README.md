@@ -5,8 +5,6 @@
 **Sovereign Signal Architecture & Agentic Interface**
 
 [](https://virtualmase.vercel.app/)
-[](https://www.google.com/url?sa=E&source=gmail&q=https://www.linkedin.com/in/virtualmase)
-[](https://www.google.com/url?sa=E&source=gmail&q=https://x.com/virtualmase)
 
 ## Abstract
 
@@ -16,7 +14,7 @@ Virtualmase is an **innovated** digital node **spearheaded** to facilitate the d
 
 ## Strategic Status & Initiatives
 
-  * **🔭 Current Focus:** **Innovating** within the **industry** of autonomous resource management and **spearheading** the development of the Aetheris OS protocol.
+  * **🔭 Current Focus:** **Innovating** within the **industry** of autonomous resource management and **spearheading** the development of the Arctura subnet on Base and Bittensor.
   * **🌱 Infrastructure Operations:** **Leveraging** a **record across** **AI Infrastructure and Operations Fundamentals** and high-performance networking to refine the material integrity of agentic systems.
   * **👯 Collaboration:** Open to **facilitated** partnerships regarding **extensive** knowledge graph mapping, LLM-native development, and sovereign identity architecture.
   * **💬 Consulting:** Available for **detailed** strategy sessions on **SEO Fundamentals**, brand reputation, and the **ability** to bridge technical systems with hospitality-grade precision.
