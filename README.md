@@ -1,5 +1,5 @@
 [README.md](https://github.com/user-attachments/files/30662221/README.md)
-# Coreweaver Labs
+# Coreweaver Labs by virtualmase
 
 **An AI infrastructure company built as a network of specialized verticals, run by a parallel fleet of AI agents instead of a traditional headcount.**
 
