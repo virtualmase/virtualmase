@@ -1,4 +1,4 @@
-# REBERB_
+# REVERB_
 
 **Systems architect. GEO strategist. Founder, Coreweaver Labs.**
 
