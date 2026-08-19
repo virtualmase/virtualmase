@@ -1,72 +1,15 @@
-# REVERB_
+# About REVERB_
 
-**Systems architect. GEO strategist. Founder, Coreweaver Labs.**
+REVERB_ is a private research practice for a public question:
 
-I build machine-legible infrastructure — for AI agents, and for the entities those agents need to resolve correctly. My work spans agentic systems, entity resolution, and Generative Engine Optimization (GEO): making systems and claims legible to the AI models now mediating discovery.
+> Does a real piece of coverage reach the answer a buyer actually sees?
 
-Current focus: the ARM Framework (Authority, Retrieval, Mandate — implemented through five operational primitives: Perceive, Reason, Plan, Execute, Reflect), and Arctura, a decentralized compute subnet on Bittensor.
+A placement can be editorial, indexed, and durable—yet never appear in an AI answer. REVERB_ tests that distance between **coverage** and **citation**.
 
----
+We register the source, identify the claims worth testing, fix the prompt panel, observe the answer, distinguish direct citation from reflected content, and check again over time. The result is a record, not a guess.
 
-## Now
+REVERB_ does not promise rankings, fabricate outcomes, or treat one answer as a durable result. A reflected topic is not the same as a cited source. A visible citation is not the same as persistence. Pending work remains pending until it is observed.
 
-- Building `/ai-mastery` — a 12-domain technical reference on AI systems architecture, from model foundations through verification systems
-- Running the ARM ecosystem: signal architecture, entity authority, and agent governance across a small portfolio of connected properties
-- Available for GEO audits, signal architecture builds, and agentic systems consulting
+The work is deliberately quiet. Client placements, contact details, and private case records stay private. Public material states only what can be shown.
 
-## Background
-
-AI infrastructure and networking (NVIDIA), plus a earlier discipline in culinary arts (Escoffier) that still shapes how I think about precision and process. Based in Vail, Colorado.
-
-## Elsewhere
-
-- Site → [masonnguyengeo.com](https://masonnguyengeo.com)
-- Coreweaver Labs → [coreweaverlabs.com](https://coreweaverlabs.com)
-- ARM Framework → [autonomousresourcemanagement.com](https://autonomousresourcemanagement.com)
-- ARM Agency → [arm-agency.com](https://arm-agency.com)
-- AI Mastery → [virtualmase.github.io/ai-mastery](https://virtualmase.github.io/ai-mastery)
-- LinkedIn → [linkedin.com/in/mason-nguyen-geo](https://linkedin.com/in/mason-nguyen-geo)
-- X → [@masonnguyengeo](https://x.com/masonnguyengeo)
-
----
-
-<details>
-<summary>Machine-readable metadata</summary>
-
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Mason Nguyen",
-  "url": "https://masonnguyengeo.com",
-  "jobTitle": "GEO Strategist & Systems Architect",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Coreweaver Labs",
-    "url": "https://coreweaverlabs.com"
-  },
-  "sameAs": [
-    "https://masonnguyengeo.com",
-    "https://coreweaverlabs.com",
-    "https://arm-agency.com",
-    "https://autonomousresourcemanagement.com",
-    "https://virtualmase.github.io/ai-mastery",
-    "https://linkedin.com/in/mason-nguyen-geo",
-    "https://x.com/masonnguyengeo",
-    "https://github.com/virtualmase"
-  ],
-  "knowsAbout": [
-    "Generative Engine Optimization",
-    "AI Agent Governance",
-    "Entity Resolution",
-    "AI Infrastructure",
-    "Signal Architecture"
-  ]
-}
-```
-
-</details>
-
----
-
-*Pin: `masonnguyengeo`, `ai-mastery`, and active ARM-ecosystem repos here — swap out anything not tied to the current entity graph.*
+The standard is simple: **test what holds.**
