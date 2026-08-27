@@ -44,8 +44,9 @@ body{
 .header-contact-item{
   font-family:'JetBrains Mono',monospace;font-size:9px;
   color:rgba(255,255,255,0.5);letter-spacing:0.5px;
-  display:flex;align-items:center;gap:6px;
+  display:flex;align-items:center;gap:6px;text-decoration:none;
 }
+.header-contact-item:hover{color:rgba(255,255,255,0.85);}
 .header-contact-item .hci-label{color:rgba(255,255,255,0.28);font-size:8px;letter-spacing:1.5px;text-transform:uppercase;}
 .header-avail{
   font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;
@@ -311,6 +312,7 @@ a.proj-card:hover .proj-title{color:#000080;}
 /* ── CONTACT ── */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:8px;}
 .contact-card{border-top:2px solid #fff;border-left:2px solid #fff;border-right:2px solid #808080;border-bottom:2px solid #808080;padding:14px 16px;background:#D4D0C8;cursor:pointer;}
+a.contact-card{display:block;color:inherit;text-decoration:none;}
 .contact-card:hover{background:#C8C4BC;}
 .contact-label{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#000080;margin-bottom:5px;}
 .contact-val{font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#101010;font-weight:300;}
@@ -414,9 +416,9 @@ a.proj-card:hover .proj-title{color:#000080;}
 
   <div class="header-right">
     <div class="header-avail"><span class="avail-dot"></span>Open for Engagements — Q3 2026</div>
-    <div class="header-contact-item"><span class="hci-label">Ph</span>(949) 288-8088</div>
-    <div class="header-contact-item"><span class="hci-label">Em</span>mason@au-re.org</div>
-    <div class="header-contact-item"><span class="hci-label">Em</span>mason@autonomousresourcemanagement.com</div>
+    <a class="header-contact-item" href="tel:+19704454050"><span class="hci-label">Ph</span>(970) 445-4050</a>
+    <a class="header-contact-item" href="mailto:mason@coreweaverlabs.com"><span class="hci-label">Em</span>mason@coreweaverlabs.com</a>
+    <a class="header-contact-item" href="mailto:mason@arctura.network"><span class="hci-label">Em</span>mason@arctura.network</a>
     <div class="header-contact-item"><span class="hci-label">Time</span><span id="hdr-clock">--:-- --</span></div>
   </div>
 </header>
@@ -690,11 +692,13 @@ a.proj-card:hover .proj-title{color:#000080;}
         <div class="sect-sub">Open to partnerships, protocol integrations &amp; select consulting</div>
         <p class="bio-text">Available for infrastructure partnerships, protocol integrations, and select consulting in agentic systems architecture, sovereign compute, GEO/GSO, and on-chain signal intelligence. All serious inquiries welcome.</p>
         <div class="contact-grid">
-          <div class="contact-card"><div class="contact-label">Phone</div><div class="contact-val">(949) 288-8088</div></div>
-          <div class="contact-card"><div class="contact-label">Primary Email</div><div class="contact-val">mason@au-re.org</div></div>
-          <div class="contact-card"><div class="contact-label">Secondary Email</div><div class="contact-val">mason@autonomousresourcemanagement.com</div></div>
-          <div class="contact-card"><div class="contact-label">Primary Hub</div><div class="contact-val">coreweaverlabs.com</div></div>
-          <div class="contact-card"><div class="contact-label">GitHub</div><div class="contact-val">github.com/virtualmase</div></div>
+          <a class="contact-card" href="tel:+19704454050"><div class="contact-label">Phone</div><div class="contact-val">(970) 445-4050</div></a>
+          <a class="contact-card" href="mailto:mason@coreweaverlabs.com"><div class="contact-label">Coreweaver Labs</div><div class="contact-val">mason@coreweaverlabs.com</div></a>
+          <a class="contact-card" href="mailto:mason@arctura.network"><div class="contact-label">Arctura Network</div><div class="contact-val">mason@arctura.network</div></a>
+          <a class="contact-card" href="mailto:mason@arctura.org"><div class="contact-label">Arctura</div><div class="contact-val">mason@arctura.org</div></a>
+          <a class="contact-card" href="mailto:mason@autonomousresourcemanagement.com"><div class="contact-label">ARM</div><div class="contact-val">mason@autonomousresourcemanagement.com</div></a>
+          <a class="contact-card" href="https://coreweaverlabs.com" target="_blank" rel="noopener noreferrer"><div class="contact-label">Primary Hub</div><div class="contact-val">coreweaverlabs.com</div></a>
+          <a class="contact-card" href="https://github.com/virtualmase" target="_blank" rel="noopener noreferrer"><div class="contact-label">GitHub</div><div class="contact-val">github.com/virtualmase</div></a>
           <div class="contact-card"><div class="contact-label">On-Chain</div><div class="contact-val">arcturiancouncil.base.eth</div></div>
           <div class="contact-card"><div class="contact-label">Availability</div><div class="contact-val">Open — Q3 2026</div></div>
         </div>
@@ -742,8 +746,10 @@ a.proj-card:hover .proj-title{color:#000080;}
 
   <div class="footer-col-right">
     <div class="footer-label">Contact</div>
-    <div class="footer-link">(949) 288-8088</div>
-    <a class="footer-link" href="mailto:mason@au-re.org">mason@au-re.org</a>
+    <a class="footer-link" href="tel:+19704454050">(970) 445-4050</a>
+    <a class="footer-link" href="mailto:mason@coreweaverlabs.com">mason@coreweaverlabs.com</a>
+    <a class="footer-link" href="mailto:mason@arctura.network">mason@arctura.network</a>
+    <a class="footer-link" href="mailto:mason@arctura.org">mason@arctura.org</a>
     <a class="footer-link" href="mailto:mason@autonomousresourcemanagement.com">mason@autonomousresourcemanagement.com</a>
     <div style="margin-top:6px;"></div>
     <div class="footer-label">Connect</div>
