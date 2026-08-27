@@ -1,824 +1,303 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta name="base:app_id" content="6a0ada777abfff0aca7b16f5" />
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>VIRTUALMASE — Founder, Coreweaver Labs | AI Infrastructure Architect</title>
-<meta name="description" content="VIRTUALMASE — Founder of Coreweaver Labs. Building AI infrastructure across multi-agent orchestration, sovereign compute on Bittensor/Base, signal intelligence, and generative engine optimization."/>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Barlow+Condensed:wght@300;400;600;700&family=IBM+Plex+Sans:wght@300;400&display=swap" rel="stylesheet"/>
-<style>
-*{box-sizing:border-box;margin:0;padding:0;}
-
-/* ── DESKTOP ── */
-body{
-  background:#6a6a6a;
-  font-family:'IBM Plex Sans',sans-serif;
-  min-height:100vh;
-  padding:16px 20px 0;
-  background-image:
-    repeating-linear-gradient(0deg,transparent,transparent 1px,rgba(0,0,0,0.04) 1px,rgba(0,0,0,0.04) 2px),
-    repeating-linear-gradient(90deg,transparent,transparent 1px,rgba(0,0,0,0.025) 1px,rgba(0,0,0,0.025) 2px);
-}
-
-/* ── HEADER BAR (above window) ── */
-.header{
-  display:flex;justify-content:space-between;align-items:center;
-  margin-bottom:12px;max-width:960px;margin-left:auto;margin-right:auto;
-}
-.header-brand{
-  font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;
-  color:#fff;letter-spacing:1px;text-transform:uppercase;
-  display:flex;align-items:center;gap:10px;
-}
-.header-brand span{color:#00C8FF;}
-.header-tagline{
-  font-family:'JetBrains Mono',monospace;font-size:9px;
-  color:rgba(255,255,255,0.45);letter-spacing:1.5px;
-  margin-top:3px;text-transform:uppercase;
-}
-.header-left{display:flex;flex-direction:column;justify-content:center;}
-.header-right{
-  display:flex;flex-direction:column;align-items:flex-end;gap:4px;
-}
-.header-contact-item{
-  font-family:'JetBrains Mono',monospace;font-size:9px;
-  color:rgba(255,255,255,0.5);letter-spacing:0.5px;
-  display:flex;align-items:center;gap:6px;text-decoration:none;
-}
-.header-contact-item:hover{color:rgba(255,255,255,0.85);}
-.header-contact-item .hci-label{color:rgba(255,255,255,0.28);font-size:8px;letter-spacing:1.5px;text-transform:uppercase;}
-.header-avail{
-  font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;
-  background:rgba(0,200,100,0.2);
-  border:1px solid rgba(0,200,100,0.35);
-  color:rgba(0,220,120,0.9);
-  padding:2px 8px;text-transform:uppercase;
-}
-.avail-dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:rgba(0,220,120,0.9);margin-right:5px;animation:blink 2s infinite;}
-@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
-
-/* ── WINDOW ── */
-.window{
-  background:#C0C0C0;
-  border-top:2px solid #FFFFFF;border-left:2px solid #FFFFFF;
-  border-right:2px solid #404040;border-bottom:2px solid #404040;
-  max-width:960px;margin:0 auto;
-}
-
-/* ── TITLEBAR ── */
-.titlebar{
-  background:linear-gradient(90deg,#000080 0%,#1084d0 70%,#0060a0 100%);
-  padding:4px 8px;display:flex;align-items:center;justify-content:space-between;
-}
-.titlebar-left{display:flex;align-items:center;gap:8px;}
-.titlebar-icon{
-  width:14px;height:14px;background:#C0C0C0;border:1px solid #fff;
-  display:flex;align-items:center;justify-content:center;
-  font-size:8px;color:#000080;font-weight:700;font-family:'JetBrains Mono',monospace;
-}
-.titlebar-title{
-  font-family:'JetBrains Mono',monospace;font-size:11px;color:#fff;letter-spacing:0.5px;
-}
-.titlebar-right{display:flex;align-items:center;gap:16px;}
-.titlebar-meta{
-  font-family:'JetBrains Mono',monospace;font-size:9px;
-  color:rgba(255,255,255,0.55);letter-spacing:0.5px;
-  display:flex;gap:12px;
-}
-.titlebar-meta span{color:rgba(255,255,255,0.75);}
-.win-controls{display:flex;gap:3px;}
-.win-btn{
-  width:16px;height:14px;background:#C0C0C0;
-  border-top:1px solid #fff;border-left:1px solid #fff;
-  border-right:1px solid #404040;border-bottom:1px solid #404040;
-  cursor:pointer;font-size:9px;display:flex;align-items:center;justify-content:center;
-}
-
-/* ── MENUBAR ── */
-.menubar{background:#C0C0C0;border-bottom:1px solid #808080;padding:3px 8px;display:flex;gap:0;}
-.menu-item{
-  font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:#000;
-  padding:2px 10px;cursor:pointer;font-weight:300;user-select:none;
-}
-.menu-item:hover,.menu-item.active{background:#000080;color:#fff;}
-
-/* ── WINDOW BODY ── */
-.window-body{display:flex;min-height:540px;}
-
-/* ── SIDEBAR ── */
-.sidebar{width:190px;border-right:2px inset #808080;background:#D4D0C8;flex-shrink:0;display:flex;flex-direction:column;}
-.sidebar-title{
-  background:#808080;padding:5px 10px;
-  font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;
-  color:#fff;text-transform:uppercase;border-bottom:1px solid #606060;
-}
-.nav-item{
-  display:flex;align-items:center;gap:6px;padding:8px 10px;cursor:pointer;
-  font-family:'JetBrains Mono',monospace;font-size:10px;color:#202020;
-  border-bottom:1px solid rgba(0,0,0,0.06);user-select:none;
-}
-.nav-item:hover,.nav-item.active{background:#000080;color:#fff;}
-.nav-icon{
-  width:14px;height:14px;flex-shrink:0;background:#C0C0C0;
-  border-top:1px solid #fff;border-left:1px solid #fff;
-  border-right:1px solid #808080;border-bottom:1px solid #808080;
-  font-size:8px;display:flex;align-items:center;justify-content:center;
-}
-.nav-item:hover .nav-icon,.nav-item.active .nav-icon{background:#6060C0;color:#fff;}
-.sidebar-divider{height:1px;background:#808080;margin:8px 0;}
-.sys-panel{padding:8px 10px;}
-.sys-row{
-  display:flex;justify-content:space-between;
-  font-family:'JetBrains Mono',monospace;font-size:9px;color:#404040;padding:2px 0;
-}
-.sys-val{color:#000080;font-weight:500;}
-.sidebar-cta{
-  margin:10px;
-  background:#000080;color:#fff;
-  font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1px;
-  text-transform:uppercase;padding:8px 10px;cursor:pointer;text-align:center;
-  border-top:1px solid #4040A0;border-left:1px solid #4040A0;
-  border-right:1px solid #000040;border-bottom:1px solid #000040;
-}
-.sidebar-cta:hover{background:#0000A0;}
-.sidebar-spacer{flex:1;}
-
-/* ── MAIN ── */
-.main{flex:1;padding:22px 28px;background:#C0C0C0;overflow:hidden;}
-.panel{display:none;}
-.panel.active{display:block;}
-
-/* ── STATUS ROW ── */
-.statusbar-row{display:flex;align-items:center;gap:8px;margin-bottom:16px;}
-.status-pill{
-  font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;
-  text-transform:uppercase;background:#000080;color:#fff;padding:2px 8px;
-}
-.status-path{font-family:'JetBrains Mono',monospace;font-size:9px;color:#606060;letter-spacing:1px;}
-.status-blink{
-  width:6px;height:6px;border-radius:50%;background:#000080;
-  animation:blink 1.2s infinite;margin-left:auto;
-}
-
-/* ── HOME HERO ── */
-.home-hero{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:start;margin-bottom:16px;}
-.hero-name{
-  font-family:'Barlow Condensed',sans-serif;font-size:64px;font-weight:700;
-  color:#0a0a0a;line-height:0.88;letter-spacing:-1px;text-transform:uppercase;margin-bottom:4px;
-}
-.hero-name span{color:#000080;}
-.hero-title{
-  font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:300;
-  letter-spacing:6px;text-transform:uppercase;color:#505050;margin-bottom:0;padding-left:3px;
-}
-.hero-tagline-box{
-  border-top:2px solid #808080;border-left:2px solid #808080;
-  border-right:2px solid #fff;border-bottom:2px solid #fff;
-  padding:12px 16px;background:#D4D0C8;min-width:200px;
-  display:flex;flex-direction:column;justify-content:center;
-}
-.htb-label{font-family:'JetBrains Mono',monospace;font-size:8px;color:#606060;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
-.htb-line{font-family:'IBM Plex Sans',sans-serif;font-size:11px;color:#101010;font-weight:300;line-height:1.55;padding:2px 0;border-bottom:1px dotted #a0a0a0;}
-.htb-line:last-child{border-bottom:none;}
-
-.rule{height:2px;background:linear-gradient(90deg,#000080 0%,#808080 55%,transparent 100%);margin:14px 0;}
-
-/* ── STAT STRIP ── */
-.stat-strip{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
-  border-top:2px solid #808080;border-left:2px solid #808080;
-  border-right:2px solid #fff;border-bottom:2px solid #fff;
-  margin-bottom:16px;
-}
-.stat-cell{
-  padding:10px 14px;border-right:1px solid #a0a0a0;background:#D4D0C8;
-  text-align:center;
-}
-.stat-cell:last-child{border-right:none;}
-.stat-num{
-  font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;
-  color:#000080;line-height:1;
-}
-.stat-label{
-  font-family:'JetBrains Mono',monospace;font-size:8px;color:#606060;
-  letter-spacing:1.5px;text-transform:uppercase;margin-top:3px;
-}
-
-/* ── BIO ── */
-.bio-text{
-  font-family:'IBM Plex Sans',sans-serif;font-size:13px;line-height:1.75;
-  color:#202020;font-weight:300;max-width:540px;margin-bottom:10px;
-}
-.bio-callout{
-  border-left:3px solid #000080;padding:8px 14px;
-  background:#D4D0C8;margin:14px 0;
-  font-family:'IBM Plex Sans',sans-serif;font-size:13px;
-  font-weight:400;color:#0a0a0a;line-height:1.6;font-style:italic;
-  max-width:540px;
-}
-
-/* ── TAGS ── */
-.tag-row{display:flex;gap:5px;flex-wrap:wrap;margin:14px 0;}
-.tag{
-  font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;
-  padding:3px 8px;text-transform:uppercase;color:#fff;background:#606060;
-  border-top:1px solid #909090;border-left:1px solid #909090;
-  border-right:1px solid #303030;border-bottom:1px solid #303030;
-}
-
-/* ── HOME GRID (two cols) ── */
-.home-bottom{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px;}
-
-/* ── DATA GRID ── */
-.data-grid{border-top:2px solid #808080;border-left:2px solid #808080;border-right:2px solid #fff;border-bottom:2px solid #fff;}
-.grid-head{
-  background:#000080;padding:5px 12px;
-  font-family:'JetBrains Mono',monospace;font-size:9px;color:#fff;
-  letter-spacing:2px;text-transform:uppercase;display:flex;justify-content:space-between;
-}
-a.grid-row{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:7px 12px;border-bottom:1px solid #b0b0b0;
-  font-family:'IBM Plex Sans',sans-serif;font-size:11px;color:#202020;
-  font-weight:300;cursor:pointer;text-decoration:none;
-}
-a.grid-row:last-child{border-bottom:none;}
-a.grid-row:hover{background:#000080;color:#fff;}
-a.grid-row:hover .gbadge{background:#fff;color:#000080;}
-.gbadge{
-  font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1px;
-  padding:2px 6px;text-transform:uppercase;background:#606060;color:#fff;
-  flex-shrink:0;margin-left:8px;
-}
-
-/* ── SERVICES QUICK LIST ── */
-.svc-quick{border-top:2px solid #808080;border-left:2px solid #808080;border-right:2px solid #fff;border-bottom:2px solid #fff;}
-.svc-quick-row{
-  display:flex;align-items:center;gap:10px;
-  padding:7px 12px;border-bottom:1px solid #b0b0b0;cursor:pointer;
-  font-family:'IBM Plex Sans',sans-serif;font-size:11px;color:#202020;font-weight:300;
-}
-.svc-quick-row:last-child{border-bottom:none;}
-.svc-quick-row:hover{background:#000080;color:#fff;}
-.svc-quick-row:hover .svc-num-sm{color:#fff;}
-.svc-num-sm{font-family:'JetBrains Mono',monospace;font-size:9px;color:#000080;letter-spacing:1px;flex-shrink:0;}
-
-/* ── SECT HEADINGS ── */
-.sect-title{font-family:'Barlow Condensed',sans-serif;font-size:40px;font-weight:600;color:#0a0a0a;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px;}
-.sect-sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#606060;margin-bottom:18px;}
-
-/* ── PROJECTS ── */
-.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-a.proj-card{
-  border-top:2px solid #fff;border-left:2px solid #fff;
-  border-right:2px solid #808080;border-bottom:2px solid #808080;
-  padding:14px 16px;background:#D4D0C8;display:block;text-decoration:none;
-}
-a.proj-card:hover{background:#C0BEBA;}
-a.proj-card:hover .proj-title{color:#000080;}
-.proj-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1px;}
-.proj-title{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:600;color:#0a0a0a;letter-spacing:0.5px;text-transform:uppercase;}
-.proj-url{font-family:'JetBrains Mono',monospace;font-size:8px;color:#000080;margin-bottom:7px;}
-.proj-desc{font-family:'IBM Plex Sans',sans-serif;font-size:11px;color:#303030;font-weight:300;line-height:1.6;}
-.proj-tags{display:flex;gap:4px;margin-top:9px;flex-wrap:wrap;}
-.badge-ai{background:#000080;}.badge-seo{background:#006060;}.badge-bio{background:#402060;}.badge-chain{background:#604000;}.badge-infra{background:#204040;}
-
-/* ── SERVICES ── */
-.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.svc-card{border-top:2px solid #fff;border-left:2px solid #fff;border-right:2px solid #808080;border-bottom:2px solid #808080;padding:16px 18px;background:#D4D0C8;}
-.svc-card:hover{background:#C8C4BC;}
-.svc-num{font-family:'JetBrains Mono',monospace;font-size:9px;color:#000080;letter-spacing:2px;margin-bottom:6px;}
-.svc-title{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:600;color:#0a0a0a;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;}
-.svc-desc{font-family:'IBM Plex Sans',sans-serif;font-size:11px;color:#303030;font-weight:300;line-height:1.65;}
-
-/* ── STACK ── */
-.stack-category{margin-bottom:18px;border-top:2px solid #808080;border-left:2px solid #808080;border-right:2px solid #fff;border-bottom:2px solid #fff;}
-.stack-cat-label{background:#000080;padding:5px 12px;font-family:'JetBrains Mono',monospace;font-size:9px;color:#fff;letter-spacing:2px;}
-.stack-row{display:grid;grid-template-columns:repeat(5,1fr);}
-.stack-item{padding:10px 12px;border-right:1px solid #b0b0b0;background:#D4D0C8;}
-.stack-item:last-child{border-right:none;}
-.stack-name{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;color:#0a0a0a;margin-bottom:2px;}
-.stack-role{font-family:'JetBrains Mono',monospace;font-size:8px;color:#606060;letter-spacing:0.5px;}
-
-/* ── EXPERIENCE ── */
-.exp-entry{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid #909090;}
-.exp-entry:last-child{border-bottom:none;}
-.exp-year{font-family:'JetBrains Mono',monospace;font-size:9px;color:#000080;letter-spacing:1px;padding-top:3px;}
-.exp-role{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:600;color:#0a0a0a;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:2px;}
-.exp-co{font-family:'JetBrains Mono',monospace;font-size:9px;color:#000080;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px;}
-.exp-desc{font-family:'IBM Plex Sans',sans-serif;font-size:11px;color:#303030;font-weight:300;line-height:1.65;}
-
-/* ── CONTACT ── */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:8px;}
-.contact-card{border-top:2px solid #fff;border-left:2px solid #fff;border-right:2px solid #808080;border-bottom:2px solid #808080;padding:14px 16px;background:#D4D0C8;cursor:pointer;}
-a.contact-card{display:block;color:inherit;text-decoration:none;}
-.contact-card:hover{background:#C8C4BC;}
-.contact-label{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#000080;margin-bottom:5px;}
-.contact-val{font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#101010;font-weight:300;}
-
-/* ── WIN STATUSBAR ── */
-.win-statusbar{border-top:2px solid #808080;background:#C0C0C0;display:flex;justify-content:space-between;}
-.wsb-left{display:flex;}
-.wsb-right{display:flex;}
-.wsb-cell{padding:3px 12px;font-family:'JetBrains Mono',monospace;font-size:9px;color:#303030;letter-spacing:0.5px;border-right:1px solid #909090;}
-.wsb-cell:last-child{border-right:none;}
-.wsb-cell.teal{color:#000080;font-weight:500;}
-
-/* ── FOOTER ── */
-.footer{
-  max-width:960px;margin:0 auto;
-  padding:14px 0 20px;
-  display:grid;grid-template-columns:1fr auto 1fr;
-  gap:16px;align-items:start;
-}
-.footer-col-left{display:flex;flex-direction:column;gap:5px;}
-.footer-col-center{display:flex;flex-direction:column;align-items:center;gap:5px;}
-.footer-col-right{display:flex;flex-direction:column;align-items:flex-end;gap:5px;}
-.footer-label{
-  font-family:'JetBrains Mono',monospace;font-size:8px;
-  color:rgba(255,255,255,0.3);letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;
-}
-.footer-link{
-  font-family:'JetBrains Mono',monospace;font-size:9px;
-  color:rgba(255,255,255,0.45);letter-spacing:0.5px;cursor:pointer;
-  text-decoration:none;display:block;padding:1px 0;
-}
-.footer-link:hover{color:rgba(255,255,255,0.8);}
-.footer-copy{
-  font-family:'JetBrains Mono',monospace;font-size:8px;
-  color:rgba(255,255,255,0.2);letter-spacing:1px;text-align:center;
-  margin-top:4px;
-}
-.footer-logo{
-  font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;
-  color:rgba(255,255,255,0.3);letter-spacing:2px;text-transform:uppercase;
-}
-.footer-logo span{color:rgba(0,200,255,0.35);}
-.footer-built{
-  font-family:'JetBrains Mono',monospace;font-size:8px;
-  color:rgba(255,255,255,0.18);letter-spacing:1px;text-transform:uppercase;
-}
-
-/* ── BOOT ── */
-.boot-overlay{position:fixed;inset:0;background:#000080;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;color:#fff;transition:opacity 0.5s;}
-.boot-overlay.hidden{opacity:0;pointer-events:none;}
-.boot-logo{font-family:'Barlow Condensed',sans-serif;font-size:56px;font-weight:700;letter-spacing:2px;margin-bottom:24px;}
-.boot-logo span{color:#00C8FF;}
-.boot-lines{font-size:11px;color:rgba(255,255,255,0.6);text-align:left;width:360px;letter-spacing:0.5px;max-height:180px;overflow:hidden;}
-.boot-line{padding:2px 0;opacity:0;transition:opacity 0.3s;}
-.boot-line.show{opacity:1;}
-.boot-bar-wrap{margin-top:20px;width:360px;height:3px;background:rgba(255,255,255,0.12);}
-.boot-bar{height:3px;background:#00C8FF;width:0%;transition:width 0.15s linear;}
-
-/* RELEVANCE STRIP */
-.relevance-strip{margin-top:14px;border-top:2px solid #808080;border-left:2px solid #808080;border-right:2px solid #fff;border-bottom:2px solid #fff;}
-.relevance-head{background:#000080;padding:5px 12px;font-family:'JetBrains Mono',monospace;font-size:9px;color:#fff;letter-spacing:2px;text-transform:uppercase;}
-.relevance-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;}
-.rel-item{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border-bottom:1px solid #b0b0b0;border-right:1px solid #b0b0b0;background:#D4D0C8;}
-.rel-item:nth-child(even){border-right:none;}
-.rel-item:nth-last-child(-n+2){border-bottom:none;}
-.rel-match{font-family:'JetBrains Mono',monospace;font-size:11px;color:#000080;font-weight:700;flex-shrink:0;margin-top:1px;}
-.rel-text{font-family:'IBM Plex Sans',sans-serif;font-size:11px;color:#202020;font-weight:300;line-height:1.55;}
-/* RESPONSIVE */
-@media(max-width:780px){
-  .header{flex-direction:column;gap:10px;align-items:flex-start;}
-  .header-right{align-items:flex-start;}
-  .sidebar{display:none;}
-  .proj-grid,.svc-grid,.home-bottom{grid-template-columns:1fr;}
-  .stat-strip{grid-template-columns:1fr 1fr;}
-  .stack-row{grid-template-columns:1fr 1fr;}
-  .contact-grid{grid-template-columns:1fr 1fr;}
-  .home-hero{grid-template-columns:1fr;}
-  .footer{grid-template-columns:1fr;gap:12px;}
-  .footer-col-right{align-items:flex-start;}
-  .titlebar-meta{display:none;}
-  .main{padding:16px;}
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="virtualmase is Mason Nguyen’s independent practice for AI systems architecture, governed agentic workflows, machine-readable knowledge, and verifiable digital trust.">
+  <meta name="theme-color" content="#0b0c10">
+  <meta property="og:title" content="virtualmase — AI Systems Architecture">
+  <meta property="og:description" content="AI systems architecture for intelligent workflows that remain legible, controlled, and accountable.">
+  <meta property="og:type" content="website">
+  <title>virtualmase — AI Systems Architecture</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Mason Nguyen",
+    "jobTitle":"AI Systems Architect",
+    "url":"https://virtualmase.vercel.app/",
+    "sameAs":["https://github.com/virtualmase","https://virtualmase.github.io/ai-mastery/"],
+    "email":"mason@coreweaverlabs.com"
+  }
+  </script>
+  <style>
+    :root {
+      --ink:#0b0c10;
+      --ink-soft:#13151d;
+      --panel:#171a24;
+      --line:rgba(232,235,244,.16);
+      --line-strong:rgba(232,235,244,.32);
+      --paper:#f1f0eb;
+      --mist:#a9afbc;
+      --muted:#727989;
+      --violet:#9182ff;
+      --sky:#75d6ff;
+      --acid:#c5ff8f;
+      --max:1180px;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; min-width:320px; background:var(--ink); color:var(--paper); font-family:"DM Sans",system-ui,sans-serif; line-height:1.5; }
+    a { color:inherit; }
+    .skip-link { position:absolute; left:12px; top:-70px; z-index:100; padding:10px 14px; background:var(--acid); color:var(--ink); font:500 12px/1 "DM Mono",monospace; text-decoration:none; }
+    .skip-link:focus { top:12px; }
+    .shell { width:min(calc(100% - 40px),var(--max)); margin:auto; }
+    .eyebrow, .micro, .nav a, .button, .label, .footer-title, .stat-label { font-family:"DM Mono",monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; }
+    .site-header { position:sticky; top:0; z-index:10; background:rgba(11,12,16,.9); border-bottom:1px solid var(--line); backdrop-filter:blur(16px); }
+    .header-inner { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-size:18px; font-weight:700; letter-spacing:-.045em; }
+    .brand-mark { display:grid; place-items:center; width:25px; height:25px; border:1px solid var(--violet); color:var(--violet); font:500 11px/1 "DM Mono",monospace; }
+    .nav { display:flex; align-items:center; gap:23px; }
+    .nav a { color:var(--mist); text-decoration:none; transition:color .2s ease; }
+    .nav a:hover, .nav a:focus-visible { color:var(--paper); }
+    .menu { display:none; border:1px solid var(--line-strong); padding:8px 10px; background:transparent; color:var(--paper); font:500 10px/1 "DM Mono",monospace; letter-spacing:.12em; text-transform:uppercase; }
+    .hero { position:relative; overflow:hidden; padding:100px 0 72px; border-bottom:1px solid var(--line); }
+    .hero::before { content:""; position:absolute; inset:0; pointer-events:none; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px); background-size:48px 48px; mask-image:linear-gradient(to bottom,black,transparent 80%); }
+    .hero-grid { position:relative; display:grid; grid-template-columns:1.1fr .9fr; align-items:center; gap:50px; }
+    .eyebrow { display:flex; align-items:center; gap:9px; color:var(--sky); margin:0 0 22px; }
+    .eyebrow::before { content:""; width:28px; height:1px; background:currentColor; }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { max-width:770px; margin-bottom:23px; font-size:clamp(3.6rem,8.2vw,7.4rem); line-height:.88; font-weight:500; letter-spacing:-.07em; }
+    h1 em { color:var(--violet); font-family:"Instrument Serif",serif; font-weight:400; letter-spacing:-.05em; }
+    .hero-copy { max-width:595px; font-size:18px; color:var(--mist); }
+    .hero-copy strong { color:var(--paper); font-weight:600; }
+    .button-row { display:flex; flex-wrap:wrap; gap:12px; margin-top:34px; }
+    .button { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:0 17px; border:1px solid var(--line-strong); text-decoration:none; transition:all .2s ease; }
+    .button.primary { background:var(--paper); border-color:var(--paper); color:var(--ink); }
+    .button.primary:hover, .button.primary:focus-visible { background:var(--acid); border-color:var(--acid); }
+    .button.ghost { color:var(--paper); }
+    .button.ghost:hover, .button.ghost:focus-visible { border-color:var(--violet); color:var(--violet); }
+    .system-map { position:relative; min-height:415px; border:1px solid var(--line); background:linear-gradient(145deg,rgba(145,130,255,.12),rgba(117,214,255,.025) 46%,rgba(197,255,143,.06)); overflow:hidden; }
+    .system-map::after { content:""; position:absolute; width:350px; height:350px; right:-120px; bottom:-150px; border:1px solid rgba(145,130,255,.35); border-radius:50%; box-shadow:0 0 0 44px rgba(145,130,255,.035),0 0 0 88px rgba(145,130,255,.025); }
+    .map-node { position:absolute; display:flex; flex-direction:column; gap:5px; padding:11px 12px; border:1px solid var(--line-strong); background:rgba(11,12,16,.86); font-family:"DM Mono",monospace; z-index:2; }
+    .map-node small { color:var(--muted); font-size:8px; letter-spacing:.1em; text-transform:uppercase; }
+    .map-node span { font-size:12px; }
+    .node-a { top:19%; left:9%; } .node-b { top:11%; right:11%; } .node-c { right:9%; bottom:25%; } .node-d { left:20%; bottom:15%; }
+    .node-a span { color:var(--sky); } .node-b span { color:var(--violet); } .node-c span { color:var(--acid); } .node-d span { color:var(--paper); }
+    .map-line { position:absolute; height:1px; transform-origin:left center; background:linear-gradient(90deg,rgba(117,214,255,.9),rgba(145,130,255,.35)); z-index:1; }
+    .line-a { width:48%; top:35%; left:23%; transform:rotate(-20deg); } .line-b { width:44%; top:51%; left:25%; transform:rotate(32deg); } .line-c { width:36%; top:66%; left:44%; transform:rotate(-22deg); }
+    .map-caption { position:absolute; right:18px; bottom:16px; z-index:3; color:var(--muted); font:400 9px/1.45 "DM Mono",monospace; letter-spacing:.08em; text-align:right; text-transform:uppercase; }
+    .signal-bar { padding:19px 0; border-bottom:1px solid var(--line); }
+    .signal-grid { display:grid; grid-template-columns:repeat(4,1fr); }
+    .signal { min-height:74px; padding:6px 20px; border-right:1px solid var(--line); display:flex; flex-direction:column; justify-content:center; gap:5px; }
+    .signal:first-child { border-left:1px solid var(--line); }
+    .signal-value { font-size:14px; font-weight:600; letter-spacing:-.025em; }
+    .signal .micro { color:var(--muted); font-size:8px; }
+    section { padding:112px 0; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:30px; margin-bottom:44px; }
+    .section-number { color:var(--violet); }
+    h2 { max-width:760px; margin:10px 0 0; font-size:clamp(2.4rem,5vw,4.7rem); line-height:.94; font-weight:500; letter-spacing:-.06em; }
+    .section-intro { max-width:345px; color:var(--mist); font-size:14px; }
+    .work-grid { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); border-left:1px solid var(--line); }
+    .work-card { min-height:355px; padding:25px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); display:flex; flex-direction:column; justify-content:space-between; background:linear-gradient(180deg,transparent,rgba(255,255,255,.018)); transition:background .25s ease; }
+    .work-card:hover { background:linear-gradient(180deg,rgba(145,130,255,.11),rgba(255,255,255,.03)); }
+    .work-card .label { color:var(--muted); font-size:9px; }
+    .work-card h3 { max-width:280px; margin:16px 0 13px; font-size:27px; font-weight:500; line-height:1; letter-spacing:-.055em; }
+    .work-card p { max-width:300px; margin-bottom:0; color:var(--mist); font-size:14px; }
+    .card-link { color:var(--acid); font:500 10px/1 "DM Mono",monospace; letter-spacing:.1em; text-decoration:none; text-transform:uppercase; }
+    .card-link:hover, .card-link:focus-visible { color:var(--paper); }
+    .approach { background:var(--paper); color:var(--ink); }
+    .approach .eyebrow { color:#4940aa; }
+    .approach-grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:80px; }
+    .approach h2 { max-width:450px; }
+    .principles { border-top:1px solid rgba(11,12,16,.2); }
+    .principle { display:grid; grid-template-columns:54px 1fr auto; align-items:baseline; gap:14px; padding:19px 0; border-bottom:1px solid rgba(11,12,16,.2); }
+    .principle-index { color:#6259cf; font:500 10px/1 "DM Mono",monospace; }
+    .principle h3 { margin:0; font-size:20px; letter-spacing:-.035em; }
+    .principle p { max-width:350px; margin:0; color:#53545a; font-size:13px; }
+    .mase-panel { margin-top:1px; background:var(--panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .mase-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:50px; align-items:end; }
+    .mase-panel h2 { max-width:680px; }
+    .mase-panel p { color:var(--mist); max-width:440px; }
+    .mase-points { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); }
+    .mase-point { padding:18px; background:var(--ink-soft); min-height:102px; }
+    .mase-point strong { display:block; margin-bottom:7px; font:500 10px/1 "DM Mono",monospace; letter-spacing:.1em; text-transform:uppercase; color:var(--sky); }
+    .mase-point span { color:var(--mist); font-size:13px; }
+    .contact { padding:0; }
+    .contact-inner { padding:100px 0; border-bottom:1px solid var(--line); }
+    .contact-grid { display:grid; grid-template-columns:1.3fr .7fr; gap:70px; align-items:end; }
+    .contact h2 { max-width:700px; }
+    .contact h2 em { font-family:"Instrument Serif",serif; font-weight:400; }
+    .contact-list { margin:0; padding:0; list-style:none; border-top:1px solid var(--line); }
+    .contact-list li { border-bottom:1px solid var(--line); }
+    .contact-list a { display:flex; justify-content:space-between; align-items:center; gap:15px; padding:13px 0; color:var(--paper); font:400 12px/1.3 "DM Mono",monospace; text-decoration:none; word-break:break-word; }
+    .contact-list a::after { content:"↗"; color:var(--violet); font-size:17px; }
+    .contact-list a:hover, .contact-list a:focus-visible { color:var(--acid); }
+    footer { padding:27px 0 36px; }
+    .footer-inner { display:flex; flex-wrap:wrap; justify-content:space-between; gap:14px 25px; color:var(--muted); }
+    .footer-inner p { margin:0; font:400 9px/1.5 "DM Mono",monospace; letter-spacing:.08em; text-transform:uppercase; }
+    .footer-registry { flex-basis:100%; margin-top:16px; padding-top:18px; border-top:1px solid var(--line); }
+    .footer-title { margin:0 0 10px; color:var(--paper); font:500 9px/1.4 "DM Mono",monospace; letter-spacing:.12em; text-transform:uppercase; }
+    .domain-links { display:flex; flex-wrap:wrap; gap:7px 15px; }
+    .domain-links a { color:var(--mist); font:400 10px/1.5 "DM Mono",monospace; text-decoration:none; }
+    .domain-links a:hover, .domain-links a:focus-visible { color:var(--acid); }
+    .footer-note { margin:13px 0 0; color:var(--muted); font:400 9px/1.5 "DM Mono",monospace; letter-spacing:.08em; text-transform:uppercase; }
+    :focus-visible { outline:2px solid var(--acid); outline-offset:4px; }
+    @media (max-width:840px) {
+      .hero { padding-top:72px; } .hero-grid,.approach-grid,.mase-grid,.contact-grid { grid-template-columns:1fr; gap:40px; }
+      .system-map { min-height:350px; max-width:600px; } .section-head { display:block; } .section-intro { margin-top:22px; }
+      .work-grid { grid-template-columns:1fr; } .work-card { min-height:255px; }
+      .signal-grid { grid-template-columns:1fr 1fr; } .signal:nth-child(3) { border-left:1px solid var(--line); } .signal:nth-child(n+3) { border-top:1px solid var(--line); }
+      .nav { position:absolute; left:0; right:0; top:71px; padding:18px 20px 21px; border-bottom:1px solid var(--line); background:var(--ink); display:none; flex-direction:column; align-items:flex-start; gap:18px; } .nav.open { display:flex; } .menu { display:block; }
+      .principle { grid-template-columns:35px 1fr; } .principle p { grid-column:2; }
+    }
+    @media (max-width:540px) {
+      .shell { width:min(calc(100% - 30px),var(--max)); } .header-inner { min-height:64px; } .nav { top:63px; }
+      h1 { font-size:3.45rem; } section { padding:78px 0; } .signal { padding:10px 12px; min-height:68px; } .mase-points { grid-template-columns:1fr; }
+      .footer-inner { flex-direction:column; } .system-map { min-height:305px; } .node-b { right:5%; } .node-c { right:4%; } .node-d { left:5%; }
+    }
+  </style>
 </head>
 <body>
-
-<!-- BOOT -->
-<div class="boot-overlay" id="boot">
-  <div class="boot-logo">VIRTUAL<span>MASE</span></div>
-  <div class="boot-lines" id="boot-lines"></div>
-  <div class="boot-bar-wrap"><div class="boot-bar" id="boot-bar"></div></div>
-</div>
-
-<!-- ══ HEADER ══ -->
-<header class="header">
-    <meta name="base:app_id" content="6a0ada777abfff0aca7b16f5" />
-  <div class="header-left">
-    <div class="header-brand">VIRTUAL<span>MASE</span></div>
-    <div class="header-tagline">Founder, Coreweaver Labs // AI Infrastructure Architect // United States</div>
-  </div>
-
-  <div class="header-right">
-    <div class="header-avail"><span class="avail-dot"></span>Open for Engagements — Q3 2026</div>
-    <a class="header-contact-item" href="tel:+19704454050"><span class="hci-label">Ph</span>(970) 445-4050</a>
-    <a class="header-contact-item" href="mailto:mason@coreweaverlabs.com"><span class="hci-label">Em</span>mason@coreweaverlabs.com</a>
-    <a class="header-contact-item" href="mailto:mason@arctura.network"><span class="hci-label">Em</span>mason@arctura.network</a>
-    <div class="header-contact-item"><span class="hci-label">Time</span><span id="hdr-clock">--:-- --</span></div>
-  </div>
-</header>
-
-<!-- ══ WINDOW ══ -->
-<div class="window">
-
-  <!-- TITLEBAR -->
-  <div class="titlebar">
-    <div class="titlebar-left">
-      <div class="titlebar-icon">V</div>
-      <div class="titlebar-title">VIRTUALMASE — AI INFRASTRUCTURE ARCHITECT</div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html" aria-label="virtualmase home"><span class="brand-mark">V/</span>virtualmase</a>
+      <button class="menu" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav" aria-label="Primary navigation">
+        <a href="#systems">Systems</a>
+        <a href="#approach">Approach</a>
+        <a href="mase.html">MASE</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-    <div class="titlebar-right">
-      <div class="titlebar-meta">
-        <span>BUILD v7.0</span>
-        <span>10 PROJECTS</span>
-        <span id="tb-clock">--:--:--</span>
-      </div>
-      <div class="win-controls">
-        <div class="win-btn">_</div>
-        <div class="win-btn">□</div>
-        <div class="win-btn">✕</div>
-      </div>
-    </div>
-  </div>
+  </header>
 
-  <!-- MENUBAR -->
-  <div class="menubar">
-    <div class="menu-item active" data-panel="home"       onclick="sp(this)">Home</div>
-    <div class="menu-item"        data-panel="projects"   onclick="sp(this)">Projects</div>
-    <div class="menu-item"        data-panel="services"   onclick="sp(this)">Services</div>
-    <div class="menu-item"        data-panel="stack"      onclick="sp(this)">Stack</div>
-    <div class="menu-item"        data-panel="experience" onclick="sp(this)">Experience</div>
-    <div class="menu-item"        data-panel="contact"    onclick="sp(this)">Contact</div>
-  </div>
-
-  <!-- WINDOW BODY -->
-  <div class="window-body">
-
-    <!-- SIDEBAR -->
-    <div class="sidebar">
-      <div class="sidebar-title">Root Dir</div>
-      <div class="nav-item active" data-panel="home"       onclick="sp(this)"><div class="nav-icon">H</div>HOME</div>
-      <div class="nav-item"        data-panel="projects"   onclick="sp(this)"><div class="nav-icon">P</div>PROJECTS</div>
-      <div class="nav-item"        data-panel="services"   onclick="sp(this)"><div class="nav-icon">S</div>SERVICES</div>
-      <div class="nav-item"        data-panel="stack"      onclick="sp(this)"><div class="nav-icon">T</div>STACK</div>
-      <div class="nav-item"        data-panel="experience" onclick="sp(this)"><div class="nav-icon">E</div>EXPERIENCE</div>
-      <div class="nav-item"        data-panel="contact"    onclick="sp(this)"><div class="nav-icon">C</div>CONTACT</div>
-      <div class="sidebar-divider"></div>
-      <div class="sys-panel">
-        <div class="sys-row"><span>PROJECTS</span><span class="sys-val">10 ACTIVE</span></div>
-        <div class="sys-row"><span>UPTIME</span><span class="sys-val" id="up">0s</span></div>
-        <div class="sys-row"><span>BUILD</span><span class="sys-val">v7.0.0</span></div>
-        <div class="sys-row"><span>LOC</span><span class="sys-val">USA</span></div>
-        <div class="sys-row"><span>ORG</span><span class="sys-val">COREWEAVER</span></div>
-      </div>
-      <div class="sidebar-spacer"></div>
-      <div class="sidebar-cta" onclick="sp(document.querySelector('[data-panel=contact]'))">→ CONTACT</div>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div class="main">
-
-      <!-- ══ HOME ══ -->
-      <div class="panel active" id="panel-home">
-        <div class="statusbar-row">
-          <div class="status-pill">ONLINE</div>
-          <div class="status-path">C:\VIRTUALMASE\HOME</div>
-          <div class="status-blink"></div>
-        </div>
-
-        <!-- Hero -->
-        <div class="home-hero">
-          <div>
-            <div class="hero-name">VIRTUAL<span>MASE</span></div>
-            <div class="hero-title">Founder &amp; AI Infrastructure Architect</div>
-          </div>
-          <div class="hero-tagline-box">
-            <div class="htb-label">Coreweaver Labs</div>
-            <div class="htb-line">Multi-Agent Orchestration</div>
-            <div class="htb-line">Sovereign Compute · Bittensor / Base</div>
-            <div class="htb-line">Signal Intelligence &amp; Autonomous Trading</div>
-            <div class="htb-line">Generative Engine Optimization</div>
-            <div class="htb-line">Agentic Systems Architecture</div>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="shell hero-grid">
+        <div>
+          <p class="eyebrow">Mason Nguyen · AI systems architect</p>
+          <h1 id="hero-title">Build intelligence that stays <em>legible.</em></h1>
+          <p class="hero-copy">virtualmase is an independent practice for <strong>AI systems architecture</strong>: knowledge systems, governed agentic workflows, machine-readable signals, and the verification layers that let people remain accountable as software becomes more capable.</p>
+          <div class="button-row">
+            <a class="button primary" href="mase.html">Explore MASE <span aria-hidden="true">&nbsp;↗</span></a>
+            <a class="button ghost" href="#systems">Selected systems <span aria-hidden="true">&nbsp;↓</span></a>
           </div>
         </div>
-
-        <div class="rule"></div>
-
-        <!-- Stat strip -->
-        <div class="stat-strip">
-          <div class="stat-cell"><div class="stat-num">10</div><div class="stat-label">Active Projects</div></div>
-          <div class="stat-cell"><div class="stat-num">8</div><div class="stat-label">LLMs Orchestrated</div></div>
-          <div class="stat-cell"><div class="stat-num">50K+</div><div class="stat-label">Agents Deployed</div></div>
-          <div class="stat-cell"><div class="stat-num">220+</div><div class="stat-label">GitHub Repositories</div></div>
-        </div>
-
-        <!-- Bio -->
-        <p class="bio-text">Founder of Coreweaver Labs — a multi-brand AI infrastructure company operating across agent coordination, sovereign compute, signal intelligence, and generative engine optimization. Sole architect across five active verticals. Built the ARM Orchestrator from scratch: 33+ files, multi-LLM routing across eight models, Supabase pgvector trace storage, weekly GitHub Actions benchmarks, and a monthly Llama fine-tune pipeline. Deployed the Arctura Base Subnet on Bittensor with full Wikidata integration, on-chain identity, and Resonance BFT consensus. 220+ public repositories.</p>
-
-        <div class="bio-callout">
-          "Every system in production was designed and built as sole architect — from routing logic to consensus mechanisms to on-chain identity. Infrastructure-first, always."
-        </div>
-
-        <!-- Coreweaver ecosystem -->
-        <div class="relevance-strip">
-          <div class="relevance-head">ACTIVE SYSTEMS // COREWEAVER LABS ECOSYSTEM</div>
-          <div class="relevance-grid">
-            <div class="rel-item"><div class="rel-match">▸</div><div class="rel-text"><strong>ARM Agency</strong> — Multi-agent infrastructure. MCP/A2A protocol-native. ARM Orchestrator routes Claude, Gemini, Grok, Codex, Manus, GPT-4o, o3, Llama with pgvector trace storage.</div></div>
-            <div class="rel-item"><div class="rel-match">▸</div><div class="rel-text"><strong>Arctura Network</strong> — Sovereign agent subnet on Bittensor / Base. Resonance BFT, Merkle attestation, Wikidata integration, on-chain tx anchors. arcturiancouncil.base.eth</div></div>
-            <div class="rel-item"><div class="rel-match">▸</div><div class="rel-text"><strong>OWLNDR</strong> — Signal intelligence platform. Veranthos: autonomous trading agent. On-chain execution. Real-time market signal processing.</div></div>
-            <div class="rel-item"><div class="rel-match">▸</div><div class="rel-text"><strong>Swell Marketing</strong> — Generative Engine Optimization. Entity-first systems. +340% LLM citation growth. 2026 GSO Roadmap. Makes brands canonical inside ChatGPT, Claude, Gemini, Perplexity.</div></div>
-            <div class="rel-item"><div class="rel-match">▸</div><div class="rel-text"><strong>ARM Insights</strong> — Editorial and research intelligence. 22-pillar content architecture. Signal-driven publishing across five verticals.</div></div>
-            <div class="rel-item"><div class="rel-match">▸</div><div class="rel-text"><strong>AURE</strong> — AI-native signal architecture. Makes organizations legible to autonomous systems. 50K+ agents in production, 99.99% uptime SLA.</div></div>
-          </div>
-        </div>
-
-        <div class="tag-row">
-          <div class="tag">Multi-Agent Infra</div>
-          <div class="tag">Bittensor</div>
-          <div class="tag">Base / On-Chain</div>
-          <div class="tag">MCP / A2A</div>
-          <div class="tag">GEO / AEO</div>
-          <div class="tag">Signal Intelligence</div>
-          <div class="tag">LLM Orchestration</div>
-          <div class="tag">Autonomous Trading</div>
-          <div class="tag">TypeScript · Python</div>
-        </div>
-
-        <!-- Two-column bottom -->
-        <div class="home-bottom">
-
-          <div class="data-grid">
-            <div class="grid-head"><span>PROJECT REGISTRY</span><span>DOMAIN</span></div>
-            <a class="grid-row" href="https://coreweaverlabs.com"                   target="_blank"><span>Coreweaver Labs // AI Infrastructure Parent</span><span class="gbadge">coreweaverlabs.com</span></a>
-            <a class="grid-row" href="https://arm-agency.com"                       target="_blank"><span>ARM Agency // Agentic AI OS</span><span class="gbadge">arm-agency.com</span></a>
-            <a class="grid-row" href="https://arctura.org"                          target="_blank"><span>Arctura Network // Sovereign Subnet</span><span class="gbadge">arctura.org</span></a>
-            <a class="grid-row" href="https://swellmarketing.agency"                target="_blank"><span>Swell Marketing // GEO + GSO</span><span class="gbadge">swellmarketing.agency</span></a>
-            <a class="grid-row" href="https://au-re.org"                            target="_blank"><span>AURE // AI-Native Signal Architecture</span><span class="gbadge">au-re.org</span></a>
-            <a class="grid-row" href="https://autonomousresourcemanagement.com"     target="_blank"><span>ARM Definition // Canonical Reference</span><span class="gbadge">.com</span></a>
-            <a class="grid-row" href="https://autonomousresourcemanagement.xyz"     target="_blank"><span>ARM Signal // Brand Signal Arch</span><span class="gbadge">.xyz</span></a>
-            <a class="grid-row" href="https://blockchainanalytics.space"            target="_blank"><span>Blockchain Analytics // On-Chain Intel</span><span class="gbadge">.space</span></a>
-            <a class="grid-row" href="https://github.com/virtualmase/arm-orchestrator" target="_blank"><span>ARM Orchestrator // Multi-LLM Router</span><span class="gbadge">GitHub</span></a>
-            <a class="grid-row" href="https://github.com/virtualmase/arctura-base-subnet" target="_blank"><span>Arctura Base Subnet // Bittensor</span><span class="gbadge">GitHub</span></a>
-          </div>
-
-          <div class="svc-quick">
-            <div class="grid-head"><span>SERVICES</span><span>CATEGORY</span></div>
-            <div class="svc-quick-row" onclick="sp(document.querySelector('[data-panel=services]'))"><span class="svc-num-sm">01</span><span>Generative Search Optimization</span><span class="gbadge badge-seo">GSO</span></div>
-            <div class="svc-quick-row" onclick="sp(document.querySelector('[data-panel=services]'))"><span class="svc-num-sm">02</span><span>Agentic Systems Architecture</span><span class="gbadge badge-ai">AI</span></div>
-            <div class="svc-quick-row" onclick="sp(document.querySelector('[data-panel=services]'))"><span class="svc-num-sm">03</span><span>Technical SEO Strategy</span><span class="gbadge badge-seo">SEO</span></div>
-            <div class="svc-quick-row" onclick="sp(document.querySelector('[data-panel=services]'))"><span class="svc-num-sm">04</span><span>AI-Native Brand Signal</span><span class="gbadge badge-infra">Signal</span></div>
-            <div class="svc-quick-row" onclick="sp(document.querySelector('[data-panel=services]'))"><span class="svc-num-sm">05</span><span>On-Chain Intelligence</span><span class="gbadge badge-chain">Chain</span></div>
-            <div class="svc-quick-row" onclick="sp(document.querySelector('[data-panel=services]'))"><span class="svc-num-sm">06</span><span>Systems Infrastructure &amp; DevOps</span><span class="gbadge badge-infra">Infra</span></div>
-          </div>
-
+        <div class="system-map" aria-label="Illustration of connected AI system layers">
+          <div class="map-line line-a"></div><div class="map-line line-b"></div><div class="map-line line-c"></div>
+          <div class="map-node node-a"><small>01 / Ground</small><span>Knowledge</span></div>
+          <div class="map-node node-b"><small>02 / Reason</small><span>Agents</span></div>
+          <div class="map-node node-c"><small>03 / Control</small><span>Verification</span></div>
+          <div class="map-node node-d"><small>04 / Observe</small><span>Signal</span></div>
+          <div class="map-caption">A system is more than a model.<br>It is its context, controls, and record.</div>
         </div>
       </div>
+    </section>
 
-      <!-- ══ PROJECTS ══ -->
-      <div class="panel" id="panel-projects">
-        <div class="statusbar-row"><div class="status-pill">DIR</div><div class="status-path">C:\VIRTUALMASE\PROJECTS [10 FILES]</div></div>
-        <div class="sect-title">Projects</div>
-        <div class="sect-sub">10 active builds &amp; live deployments</div>
-        <div class="proj-grid">
-          <a class="proj-card" href="https://coreweaverlabs.com" target="_blank">
-            <div class="proj-header"><div class="proj-title">Coreweaver Labs</div><div class="gbadge badge-ai">Parent</div></div>
-            <div class="proj-url">coreweaverlabs.com</div>
-            <div class="proj-desc">Multi-brand AI infrastructure company. Five active verticals: ARM Agency, Arctura Network, OWLNDR, Swell Marketing, ARM Insights. Sole architect across every system in production.</div>
-            <div class="proj-tags"><div class="tag">AI Infra</div><div class="tag">Multi-Brand</div><div class="tag">Sole Architect</div></div>
-          </a>
-          <a class="proj-card" href="https://arm-agency.com" target="_blank">
-            <div class="proj-header"><div class="proj-title">ARM Agency</div><div class="gbadge badge-ai">Agentic OS</div></div>
-            <div class="proj-url">arm-agency.com</div>
-            <div class="proj-desc">The Agentic AI Operating System. ARM Orchestrator routes across 8 LLMs — Claude, Gemini, Grok, Codex, Manus, GPT-4o, o3, Llama. Supabase pgvector trace storage. 33+ files in production. Weekly benchmarks. Monthly Llama fine-tune pipeline.</div>
-            <div class="proj-tags"><div class="tag">MCP</div><div class="tag">A2A</div><div class="tag">8 LLMs</div><div class="tag">BFT</div></div>
-          </a>
-          <a class="proj-card" href="https://arctura.org" target="_blank">
-            <div class="proj-header"><div class="proj-title">Arctura Network</div><div class="gbadge badge-chain">Subnet</div></div>
-            <div class="proj-url">arctura.org</div>
-            <div class="proj-desc">Sovereign agent infrastructure on Bittensor / Base. Resonance BFT scoring, Merkle attestation proofs, Wikidata integration with consensus-gated writeback anchored to on-chain tx hashes. On-chain identity: arcturiancouncil.base.eth</div>
-            <div class="proj-tags"><div class="tag">Bittensor</div><div class="tag">Base</div><div class="tag">BFT</div><div class="tag">Wikidata</div></div>
-          </a>
-          <a class="proj-card" href="https://au-re.org" target="_blank">
-            <div class="proj-header"><div class="proj-title">AURE</div><div class="gbadge badge-ai">AI Infra</div></div>
-            <div class="proj-url">au-re.org</div>
-            <div class="proj-desc">AI-native signal architecture and enterprise brand strategy. Makes organizations legible to autonomous systems. 50K+ agents in production, 99.99% uptime SLA.</div>
-            <div class="proj-tags"><div class="tag">Signal Arch</div><div class="tag">GSO</div><div class="tag">Knowledge Graphs</div><div class="tag">LLM Citations</div></div>
-          </a>
-          <a class="proj-card" href="#" target="_blank">
-            <div class="proj-header"><div class="proj-title">OWLNDR</div><div class="gbadge badge-chain">Signal Intel</div></div>
-            <div class="proj-url">owlndr.com</div>
-            <div class="proj-desc">Signal intelligence platform. Home of Veranthos — an autonomous trading agent operating on-chain. Real-time market signal processing, execution logic, and sovereign trade intelligence.</div>
-            <div class="proj-tags"><div class="tag">Veranthos</div><div class="tag">Trading Agent</div><div class="tag">On-Chain</div><div class="tag">Signal</div></div>
-          </a>
-          <a class="proj-card" href="https://swellmarketing.agency" target="_blank">
-            <div class="proj-header"><div class="proj-title">Swell Marketing</div><div class="gbadge badge-seo">GEO / GSO</div></div>
-            <div class="proj-url">swellmarketing.agency</div>
-            <div class="proj-desc">Directed intelligence for the AI-first web. Entity-first systems that make brands canonical inside ChatGPT, Claude, Gemini, and Perplexity. +340% LLM citation growth. Home of the 2026 GSO Roadmap.</div>
-            <div class="proj-tags"><div class="tag">LLM Citations</div><div class="tag">Entity Mapping</div><div class="tag">GSO</div><div class="tag">GEO</div></div>
-          </a>
-          <a class="proj-card" href="https://autonomousresourcemanagement.com" target="_blank">
-            <div class="proj-header"><div class="proj-title">ARM Definition</div><div class="gbadge badge-infra">Reference</div></div>
-            <div class="proj-url">autonomousresourcemanagement.com</div>
-            <div class="proj-desc">The canonical technical definition and framework for Autonomous Resource Management — AI-native systems that self-allocate resources using autonomous decision loops with verifiable audit trails.</div>
-            <div class="proj-tags"><div class="tag">ARM</div><div class="tag">Framework</div><div class="tag">Entity Record</div><div class="tag">Signal Stack</div></div>
-          </a>
-          <a class="proj-card" href="https://autonomousresourcemanagement.xyz" target="_blank">
-            <div class="proj-header"><div class="proj-title">ARM Signal</div><div class="gbadge badge-seo">Brand Signal</div></div>
-            <div class="proj-url">autonomousresourcemanagement.xyz</div>
-            <div class="proj-desc">AI-native brand signal architecture for capital markets. Transforms brand presence into structured, machine-readable knowledge graphs trusted by investors and autonomous systems alike.</div>
-            <div class="proj-tags"><div class="tag">SignalStack</div><div class="tag">AIO</div><div class="tag">Capital</div><div class="tag">VC</div></div>
-          </a>
-          <a class="proj-card" href="https://blockchainanalytics.space" target="_blank">
-            <div class="proj-header"><div class="proj-title">Blockchain Analytics</div><div class="gbadge badge-chain">On-Chain</div></div>
-            <div class="proj-url">blockchainanalytics.space</div>
-            <div class="proj-desc">Institutional on-chain intelligence. Wallet clustering, AML/OFAC screening, real-time anomaly detection. Sub-12ms latency. Built on Next.js 16, Hypersync, and ClickHouse.</div>
-            <div class="proj-tags"><div class="tag">AML</div><div class="tag">OFAC</div><div class="tag">Hypersync</div><div class="tag">ClickHouse</div></div>
-          </a>
-          <a class="proj-card" href="https://github.com/virtualmase/arm-orchestrator" target="_blank">
-            <div class="proj-header"><div class="proj-title">ARM Orchestrator</div><div class="gbadge badge-ai">Core Infra</div></div>
-            <div class="proj-url">github.com/virtualmase/arm-orchestrator</div>
-            <div class="proj-desc">Production multi-LLM router. 33+ files. Routes across Claude, Gemini, Grok, Codex, Manus, GPT-4o, o3, and Llama. Supabase pgvector trace storage. Weekly GitHub Actions benchmarks. Monthly fine-tune pipeline.</div>
-            <div class="proj-tags"><div class="tag">TypeScript</div><div class="tag">Supabase</div><div class="tag">pgvector</div><div class="tag">GitHub Actions</div></div>
-          </a>
-        </div>
+    <div class="signal-bar" aria-label="Core practice areas">
+      <div class="shell signal-grid">
+        <div class="signal"><span class="micro">01 / Ground</span><span class="signal-value">Knowledge systems</span></div>
+        <div class="signal"><span class="micro">02 / Execute</span><span class="signal-value">Governed agents</span></div>
+        <div class="signal"><span class="micro">03 / Observe</span><span class="signal-value">Machine-readable signal</span></div>
+        <div class="signal"><span class="micro">04 / Verify</span><span class="signal-value">Digital trust</span></div>
       </div>
-
-      <!-- ══ SERVICES ══ -->
-      <div class="panel" id="panel-services">
-        <div class="statusbar-row"><div class="status-pill">DIR</div><div class="status-path">C:\VIRTUALMASE\SERVICES</div></div>
-        <div class="sect-title">Services</div>
-        <div class="sect-sub">What I build &amp; deliver</div>
-        <div class="svc-grid">
-          <div class="svc-card"><div class="svc-num">01</div><div class="svc-title">Generative Search Optimization</div><div class="svc-desc">Entity-first architecture that makes brands the canonical source inside ChatGPT, Claude, Gemini, and Perplexity. Schema orchestration, knowledge graph engineering, and LLM citation strategy.</div><div class="proj-tags" style="margin-top:10px;"><div class="tag">GSO</div><div class="tag">AIO</div><div class="tag">Entity Mapping</div><div class="tag">Schema</div></div></div>
-          <div class="svc-card"><div class="svc-num">02</div><div class="svc-title">Agentic Systems Architecture</div><div class="svc-desc">Design and deployment of agentic AI workflows — from single-agent pipelines to multi-agent swarms. MCP/A2A protocol integration, mandate chain design, Byzantine Fault Tolerance, and durable execution fabrics.</div><div class="proj-tags" style="margin-top:10px;"><div class="tag">MCP</div><div class="tag">A2A</div><div class="tag">Swarm Design</div><div class="tag">BFT</div></div></div>
-          <div class="svc-card"><div class="svc-num">03</div><div class="svc-title">Technical SEO Strategy</div><div class="svc-desc">Enterprise-level organic growth — site architecture, crawl optimization, Core Web Vitals, structured data, and content signal frameworks built to compound over time and survive every algorithm shift.</div><div class="proj-tags" style="margin-top:10px;"><div class="tag">Technical SEO</div><div class="tag">CWV</div><div class="tag">Structured Data</div></div></div>
-          <div class="svc-card"><div class="svc-num">04</div><div class="svc-title">AI-Native Brand Signal</div><div class="svc-desc">Full SignalStack™ implementation — canonical source establishment, high-trust directory syndication, semantic brand structuring, and AI confidence score optimization. Brands built to be trusted by machines.</div><div class="proj-tags" style="margin-top:10px;"><div class="tag">SignalStack</div><div class="tag">Brand Arch</div><div class="tag">Knowledge Graph</div></div></div>
-          <div class="svc-card"><div class="svc-num">05</div><div class="svc-title">On-Chain Intelligence</div><div class="svc-desc">Blockchain analytics for institutional clients — wallet clustering, AML/OFAC screening, real-time anomaly detection, and forensic chain analysis. Powered by Hypersync and ClickHouse.</div><div class="proj-tags" style="margin-top:10px;"><div class="tag">AML</div><div class="tag">Forensics</div><div class="tag">Real-Time</div></div></div>
-          <div class="svc-card"><div class="svc-num">06</div><div class="svc-title">Systems Infrastructure &amp; DevOps</div><div class="svc-desc">Infrastructure-as-Code, CI/CD pipeline architecture, and dApp deployment engineering. Repeatable, auditable processes for high-frequency digital ecosystems at any scale.</div><div class="proj-tags" style="margin-top:10px;"><div class="tag">Terraform</div><div class="tag">CI/CD</div><div class="tag">IaC</div><div class="tag">DevOps</div></div></div>
-        </div>
-      </div>
-
-      <!-- ══ STACK ══ -->
-      <div class="panel" id="panel-stack">
-        <div class="statusbar-row"><div class="status-pill">DIR</div><div class="status-path">C:\VIRTUALMASE\STACK</div></div>
-        <div class="sect-title">Stack</div>
-        <div class="sect-sub">Tools, frameworks &amp; infrastructure</div>
-        <div class="stack-category"><div class="stack-cat-label">AI &amp; AGENTIC</div><div class="stack-row"><div class="stack-item"><div class="stack-name">MCP / A2A</div><div class="stack-role">Agent Protocol Layer</div></div><div class="stack-item"><div class="stack-name">Bittensor</div><div class="stack-role">Sovereign Compute</div></div><div class="stack-item"><div class="stack-name">Claude / Gemini</div><div class="stack-role">LLM Orchestration</div></div><div class="stack-item"><div class="stack-name">GPT-4o / o3</div><div class="stack-role">LLM Orchestration</div></div><div class="stack-item"><div class="stack-name">Grok / Llama</div><div class="stack-role">LLM Orchestration</div></div></div></div>
-        <div class="stack-category"><div class="stack-cat-label">DATA &amp; STORAGE</div><div class="stack-row"><div class="stack-item"><div class="stack-name">Supabase</div><div class="stack-role">pgvector · Trace Storage</div></div><div class="stack-item"><div class="stack-name">ClickHouse</div><div class="stack-role">Real-Time Analytics DB</div></div><div class="stack-item"><div class="stack-name">Hypersync</div><div class="stack-role">Rust Blockchain Indexer</div></div><div class="stack-item"><div class="stack-name">Python</div><div class="stack-role">Data Engineering</div></div><div class="stack-item"><div class="stack-name">pgvector</div><div class="stack-role">Vector Embeddings</div></div></div></div>
-        <div class="stack-category"><div class="stack-cat-label">FRONTEND &amp; WEB</div><div class="stack-row"><div class="stack-item"><div class="stack-name">Next.js 16</div><div class="stack-role">SSR / React Compiler</div></div><div class="stack-item"><div class="stack-name">Webflow</div><div class="stack-role">AI-Parseable Experiences</div></div><div class="stack-item"><div class="stack-name">Remix</div><div class="stack-role">Spatial Web Interfaces</div></div><div class="stack-item"><div class="stack-name">Schema.org</div><div class="stack-role">Structured Data / JSON-LD</div></div><div class="stack-item"><div class="stack-name">Cloudflare</div><div class="stack-role">Edge / CDN / DNS</div></div></div></div>
-        <div class="stack-category"><div class="stack-cat-label">INFRASTRUCTURE</div><div class="stack-row"><div class="stack-item"><div class="stack-name">GitHub Actions</div><div class="stack-role">CI/CD · Benchmarks</div></div><div class="stack-item"><div class="stack-name">Vercel</div><div class="stack-role">Edge Deployment</div></div><div class="stack-item"><div class="stack-name">Base (L2)</div><div class="stack-role">On-Chain Execution</div></div><div class="stack-item"><div class="stack-name">Notion</div><div class="stack-role">Ops + Content OS</div></div><div class="stack-item"><div class="stack-name">Schema.org</div><div class="stack-role">Structured Data / JSON-LD</div></div></div></div>
-      </div>
-
-      <!-- ══ EXPERIENCE ══ -->
-      <div class="panel" id="panel-experience">
-        <div class="statusbar-row"><div class="status-pill">DIR</div><div class="status-path">C:\VIRTUALMASE\EXPERIENCE</div></div>
-        <div class="sect-title">Experience</div>
-        <div class="sect-sub">Professional history</div>
-        <div class="exp-entry"><div class="exp-year">2025 — NOW</div><div><div class="exp-role">Founder &amp; Sole Architect</div><div class="exp-co">Coreweaver Labs // coreweaverlabs.com // United States</div><div class="exp-desc">Built and operates a multi-brand AI infrastructure company across five verticals. ARM Agency: multi-agent OS with 8-LLM orchestration via ARM Orchestrator (33+ files, Supabase pgvector, weekly benchmarks, monthly Llama fine-tune). Arctura Network: sovereign agent subnet on Bittensor/Base with Resonance BFT, Wikidata integration, and on-chain identity. OWLNDR: signal intelligence with Veranthos autonomous trading agent. Swell Marketing: GEO/GSO. ARM Insights: editorial intelligence.</div></div></div>
-        <div class="exp-entry"><div class="exp-year">2024 — NOW</div><div><div class="exp-role">Founder &amp; Systems Architect</div><div class="exp-co">AURE // au-re.org // United States</div><div class="exp-desc">AI-native signal infrastructure and enterprise brand strategy. Makes organizations legible to autonomous systems. 50K+ agents deployed in active production with 99.99% uptime SLA.</div></div></div>
-        <div class="exp-entry"><div class="exp-year">2023 — NOW</div><div><div class="exp-role">GEO Architect</div><div class="exp-co">Swell Marketing // swellmarketing.agency</div><div class="exp-desc">Directing GSO and entity-first GEO strategy. +340% LLM citation growth, +180% organic from AI sources. Architect of the 2026 GSO Roadmap. Home of the Swell Academy education platform.</div></div></div>
-        <div class="exp-entry"><div class="exp-year">2021 — 2023</div><div><div class="exp-role">Independent Systems Architect</div><div class="exp-co">Consulting</div><div class="exp-desc">Designed and deployed digital infrastructure across wellness, media, and e-commerce. Foundational work that seeded Blockchain Analytics and the ARM signal architecture framework.</div></div></div>
-      </div>
-
-      <!-- ══ CONTACT ══ -->
-      <div class="panel" id="panel-contact">
-        <div class="statusbar-row"><div class="status-pill">DIR</div><div class="status-path">C:\VIRTUALMASE\CONTACT</div></div>
-        <div class="sect-title">Contact</div>
-        <div class="sect-sub">Open to partnerships, protocol integrations &amp; select consulting</div>
-        <p class="bio-text">Available for infrastructure partnerships, protocol integrations, and select consulting in agentic systems architecture, sovereign compute, GEO/GSO, and on-chain signal intelligence. All serious inquiries welcome.</p>
-        <div class="contact-grid">
-          <a class="contact-card" href="tel:+19704454050"><div class="contact-label">Phone</div><div class="contact-val">(970) 445-4050</div></a>
-          <a class="contact-card" href="mailto:mason@coreweaverlabs.com"><div class="contact-label">Coreweaver Labs</div><div class="contact-val">mason@coreweaverlabs.com</div></a>
-          <a class="contact-card" href="mailto:mason@arctura.network"><div class="contact-label">Arctura Network</div><div class="contact-val">mason@arctura.network</div></a>
-          <a class="contact-card" href="mailto:mason@arctura.org"><div class="contact-label">Arctura</div><div class="contact-val">mason@arctura.org</div></a>
-          <a class="contact-card" href="mailto:mason@autonomousresourcemanagement.com"><div class="contact-label">ARM</div><div class="contact-val">mason@autonomousresourcemanagement.com</div></a>
-          <a class="contact-card" href="https://coreweaverlabs.com" target="_blank" rel="noopener noreferrer"><div class="contact-label">Primary Hub</div><div class="contact-val">coreweaverlabs.com</div></a>
-          <a class="contact-card" href="https://github.com/virtualmase" target="_blank" rel="noopener noreferrer"><div class="contact-label">GitHub</div><div class="contact-val">github.com/virtualmase</div></a>
-          <div class="contact-card"><div class="contact-label">On-Chain</div><div class="contact-val">arcturiancouncil.base.eth</div></div>
-          <div class="contact-card"><div class="contact-label">Availability</div><div class="contact-val">Open — Q3 2026</div></div>
-        </div>
-      </div>
-
-    </div><!-- /main -->
-  </div><!-- /window-body -->
-
-  <!-- WIN STATUSBAR -->
-  <div class="win-statusbar">
-    <div class="wsb-left">
-      <div class="wsb-cell" id="pi">HOME</div>
-      <div class="wsb-cell">VIRTUALMASE v7.0 // AI INFRA ARCHITECT</div>
-      <div class="wsb-cell teal" id="clock2">--:--</div>
     </div>
-    <div class="wsb-right">
-      <div class="wsb-cell">10 PROJECTS</div>
-      <div class="wsb-cell">COREWEAVER LABS</div>
-      <div class="wsb-cell teal">● ONLINE</div>
+
+    <section id="systems" aria-labelledby="systems-title">
+      <div class="shell">
+        <div class="section-head">
+          <div><p class="eyebrow"><span class="section-number">01</span> / Selected systems</p><h2 id="systems-title">A portfolio of connected operating surfaces.</h2></div>
+          <p class="section-intro">Each property carries a distinct job. Together they explore how intelligent systems become useful, attributable, and durable in the real world.</p>
+        </div>
+        <div class="work-grid">
+          <article class="work-card">
+            <div><p class="label">AI infrastructure parent</p><h3>Coreweaver Labs</h3><p>Agentic infrastructure and systems architecture for organizations that need capability to remain understandable and controlled.</p></div>
+            <a class="card-link" href="https://coreweaverlabs.com" target="_blank" rel="noopener noreferrer">Visit Coreweaver Labs ↗</a>
+          </article>
+          <article class="work-card">
+            <div><p class="label">Research & learning</p><h3>AI Mastery</h3><p>A living technical map of knowledge, reasoning, agents, infrastructure, observation, and verification.</p></div>
+            <a class="card-link" href="https://virtualmase.github.io/ai-mastery/" target="_blank" rel="noopener noreferrer">Enter AI Mastery ↗</a>
+          </article>
+          <article class="work-card">
+            <div><p class="label">M&A AI enablement</p><h3>MASE</h3><p>A practical, controlled path for M&A teams moving from AI curiosity to repeatable workflow adoption.</p></div>
+            <a class="card-link" href="mase.html">Explore MASE ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach" id="approach" aria-labelledby="approach-title">
+      <div class="shell approach-grid">
+        <div><p class="eyebrow">02 / Operating principle</p><h2 id="approach-title">Control before autonomy.</h2></div>
+        <div class="principles">
+          <article class="principle"><span class="principle-index">01</span><h3>Architecture over novelty</h3><p>A useful system outlasts a fashionable demonstration.</p></article>
+          <article class="principle"><span class="principle-index">02</span><h3>Evidence over assertion</h3><p>Important claims should be inspectable, attributable, and open to correction.</p></article>
+          <article class="principle"><span class="principle-index">03</span><h3>Systems over features</h3><p>Capability emerges from the interfaces between models, context, tools, people, and controls.</p></article>
+          <article class="principle"><span class="principle-index">04</span><h3>Trust by construction</h3><p>Provenance, policy, and review belong in the design—not the postmortem.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="mase-panel" aria-labelledby="mase-title">
+      <div class="shell mase-grid">
+        <div>
+          <p class="eyebrow">03 / M&A AI systems</p>
+          <h2 id="mase-title">AI adoption for deal teams that need a <em>record.</em></h2>
+          <p>MASE translates AI systems architecture into bounded workflows for M&A practitioners. The goal is not autonomous deal judgment; it is a practical operating model with approved data, clear review points, and accountable humans.</p>
+          <div class="button-row"><a class="button primary" href="mase.html">View the MASE prototype ↗</a></div>
+        </div>
+        <div class="mase-points" aria-label="MASE workflow principles">
+          <div class="mase-point"><strong>Scope</strong><span>Start with a specific workflow, not a broad transformation claim.</span></div>
+          <div class="mase-point"><strong>Control</strong><span>Define data boundaries, human review, and escalation before deployment.</span></div>
+          <div class="mase-point"><strong>Learn</strong><span>Observe adoption and results before committing to a larger build.</span></div>
+          <div class="mase-point"><strong>Record</strong><span>Keep an intelligible trail of inputs, outputs, approvals, and limits.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="shell contact-inner contact-grid">
+        <div><p class="eyebrow">04 / Start a conversation</p><h2 id="contact-title">Bring the problem that needs <em>structure.</em></h2></div>
+        <ul class="contact-list" aria-label="Contact virtualmase">
+          <li><a href="tel:+19704454050">(970) 445-4050</a></li>
+          <li><a href="mailto:mason@coreweaverlabs.com">mason@coreweaverlabs.com</a></li>
+          <li><a href="mailto:mason@arctura.network">mason@arctura.network</a></li>
+          <li><a href="mailto:mason@arctura.org">mason@arctura.org</a></li>
+          <li><a href="mailto:mason@autonomousresourcemanagement.com">mason@autonomousresourcemanagement.com</a></li>
+          <li><a href="mailto:virtualmase@gmail.com">virtualmase@gmail.com</a></li>
+          <li><a href="mailto:virtualmase@outlook.com">virtualmase@outlook.com</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <p>virtualmase / Independent AI systems architecture</p>
+      <p>© <span id="year">2026</span> Mason Nguyen</p>
+      <p><a href="https://github.com/virtualmase" target="_blank" rel="noopener noreferrer">GitHub ↗</a></p>
+      <div class="footer-registry">
+        <p class="footer-title">Managed properties</p>
+        <div class="domain-links">
+          <a href="https://coreweaverlabs.com" target="_blank" rel="noopener noreferrer">coreweaverlabs.com</a>
+          <a href="https://arm-agency.com" target="_blank" rel="noopener noreferrer">arm-agency.com</a>
+          <a href="https://arctura.org" target="_blank" rel="noopener noreferrer">arctura.org</a>
+          <a href="https://au-re.org" target="_blank" rel="noopener noreferrer">au-re.org</a>
+          <a href="https://swellmarketing.agency" target="_blank" rel="noopener noreferrer">swellmarketing.agency</a>
+          <a href="https://autonomousresourcemanagement.com" target="_blank" rel="noopener noreferrer">autonomousresourcemanagement.com</a>
+          <a href="https://autonomousresourcemanagement.xyz" target="_blank" rel="noopener noreferrer">autonomousresourcemanagement.xyz</a>
+          <a href="https://blockchainanalytics.space" target="_blank" rel="noopener noreferrer">blockchainanalytics.space</a>
+        </div>
+        <p class="footer-note">Domain and web operations span Hostinger and Vercel. Property-specific hosting is documented in the infrastructure inventory.</p>
+      </div>
     </div>
-  </div>
-
-</div><!-- /window -->
-
-<!-- ══ FOOTER ══ -->
-<footer class="footer">
-  <div class="footer-col-left">
-    <div class="footer-label">Projects</div>
-    <a class="footer-link" href="https://coreweaverlabs.com" target="_blank">coreweaverlabs.com</a>
-    <a class="footer-link" href="https://arm-agency.com" target="_blank">arm-agency.com</a>
-    <a class="footer-link" href="https://arctura.org" target="_blank">arctura.org</a>
-    <a class="footer-link" href="https://au-re.org" target="_blank">au-re.org</a>
-    <a class="footer-link" href="https://swellmarketing.agency" target="_blank">swellmarketing.agency</a>
-    <a class="footer-link" href="https://autonomousresourcemanagement.com" target="_blank">autonomousresourcemanagement.com</a>
-    <a class="footer-link" href="https://autonomousresourcemanagement.xyz" target="_blank">autonomousresourcemanagement.xyz</a>
-    <a class="footer-link" href="https://blockchainanalytics.space" target="_blank">blockchainanalytics.space</a>
-  </div>
-
-  <div class="footer-col-center">
-    <div class="footer-logo">VIRTUAL<span>MASE</span></div>
-    <div class="footer-built">Founder, Coreweaver Labs</div>
-    <div class="footer-built" style="margin-top:4px;">AI Infrastructure Architect</div>
-    <div class="footer-copy">© 2026 VIRTUALMASE // ALL RIGHTS RESERVED</div>
-  </div>
-
-  <div class="footer-col-right">
-    <div class="footer-label">Contact</div>
-    <a class="footer-link" href="tel:+19704454050">(970) 445-4050</a>
-    <a class="footer-link" href="mailto:mason@coreweaverlabs.com">mason@coreweaverlabs.com</a>
-    <a class="footer-link" href="mailto:mason@arctura.network">mason@arctura.network</a>
-    <a class="footer-link" href="mailto:mason@arctura.org">mason@arctura.org</a>
-    <a class="footer-link" href="mailto:mason@autonomousresourcemanagement.com">mason@autonomousresourcemanagement.com</a>
-    <div style="margin-top:6px;"></div>
-    <div class="footer-label">Connect</div>
-    <a class="footer-link" href="https://www.linkedin.com/company/blockchain-analytics-space" target="_blank">LinkedIn</a>
-    <a class="footer-link" href="https://github.com/virtualmase" target="_blank">GitHub // virtualmase</a>
-  </div>
-</footer>
-
-<script>
-function sp(el){
-  document.querySelectorAll('.nav-item,.menu-item').forEach(n=>n.classList.remove('active'));
-  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
-  const panel=el.dataset.panel;
-  document.querySelectorAll('[data-panel="'+panel+'"]').forEach(n=>n.classList.add('active'));
-  document.getElementById('panel-'+panel).classList.add('active');
-  document.getElementById('pi').textContent=panel.toUpperCase();
-}
-
-const st=Date.now();
-function tick(){
-  const n=new Date();
-  let h=n.getHours(),m=n.getMinutes(),s=n.getSeconds();
-  const ap=h>=12?'PM':'AM'; h=h%12||12;
-  const hh=String(h).padStart(2,'0'), mm=String(m).padStart(2,'0'), ss=String(s).padStart(2,'0');
-  const short=hh+':'+mm+' '+ap;
-  const long=hh+':'+mm+':'+ss;
-  document.getElementById('hdr-clock').textContent=short;
-  document.getElementById('tb-clock').textContent=long;
-  document.getElementById('clock2').textContent=short;
-  const u=Math.floor((Date.now()-st)/1000);
-  document.getElementById('up').textContent=u<60?u+'s':u<3600?Math.floor(u/60)+'m':Math.floor(u/3600)+'h';
-}
-tick(); setInterval(tick,1000);
-
-// Boot
-const bootLines=[
-  'VIRTUALMASE PORTFOLIO SYSTEM v7.0.0',
-  'Initializing Coreweaver Labs infrastructure...',
-  'Loading project registry... [10 FOUND]',
-  'Mounting ARM Orchestrator... [8 LLMs ONLINE]',
-  'Syncing Arctura subnet... [Bittensor / Base]',
-  'Handshake: arm-agency.com ✓  arctura.org ✓',
-  'Handshake: au-re.org ✓  coreweaverlabs.com ✓',
-  'Handshake: swellmarketing.agency ✓  owlndr.com ✓',
-  'Verifying on-chain identity... arcturiancouncil.base.eth ✓',
-  'All 10 systems operational.',
-  'BOOT COMPLETE — WELCOME TO VIRTUALMASE.'
-];
-const bl=document.getElementById('boot-lines');
-const bar=document.getElementById('boot-bar');
-let idx=0;
-function nextLine(){
-  if(idx<bootLines.length){
-    const d=document.createElement('div');
-    d.className='boot-line';
-    d.textContent='> '+bootLines[idx];
-    bl.appendChild(d);
-    setTimeout(()=>d.classList.add('show'),30);
-    bar.style.width=Math.round((idx+1)/bootLines.length*100)+'%';
-    idx++;
-    setTimeout(nextLine,idx===bootLines.length?700:140);
-  } else {
-    setTimeout(()=>{
-      document.getElementById('boot').classList.add('hidden');
-      setTimeout(()=>document.getElementById('boot').remove(),600);
-    },400);
-  }
-}
-setTimeout(nextLine,300);
-</script>
+  </footer>
+  <script>
+    const menu = document.querySelector('.menu');
+    const nav = document.querySelector('.nav');
+    menu.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      menu.setAttribute('aria-expanded', String(open));
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('open'); menu.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
