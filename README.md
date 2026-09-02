@@ -4,7 +4,7 @@ virtualmase is a private research practice for a public question:
 
 > Does a real piece of coverage reach the answer a buyer actually sees?
 
-A placement can be editorial, indexed, and durable—yet never appear in an AI answer. REVERB_ tests that distance between **coverage** and **citation**.
+A placement can be editorial, indexed, and durable—yet never appear in an AI answer. Our propriety asset called REVERB_ tests that distance between **coverage** and **citation**.
 
 We register the source, identify the claims worth testing, fix the prompt panel, observe the answer, distinguish direct citation from reflected content, and check again over time. The result is a record, not a guess.
 
