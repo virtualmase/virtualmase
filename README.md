@@ -54,9 +54,11 @@ We publish notes on software, engineering judgment, maintenance, and the decisio
 **The Best Software Disappears**  
 Good software rarely looks impressive. It looks obvious.
 
+[read the writing →](https://substack.com/@virtualmase)
+
 ## elsewhere
 
-[website](https://virtualmase.github.io) · substack · x
+[website](https://virtualmase.github.io) · [github](https://github.com/virtualmase) · [youtube](https://www.youtube.com/@virtualmase) · [x](https://x.com/virtualmase) · [instagram](https://www.instagram.com/virtualmase) · [writing](https://substack.com/@virtualmase)
 
 ---
 
