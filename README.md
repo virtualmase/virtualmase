@@ -1,19 +1,65 @@
-# About virtualmase
+# virtualmase
 
-virtualmase is a private research practice for a public question:
+**software, judgment, and things worth building.**
 
-> Does a real piece of coverage reach the answer a buyer actually sees?
+virtualmase builds software and publishes the thinking behind it.
 
-A placement can be editorial, indexed, and durable—yet never appear in an AI answer. Our propriety asset called REVERB_ tests that distance between **coverage** and **citation**.
+We care about the parts of the work that rarely make the screenshot:
 
-We register the source, identify the claims worth testing, fix the prompt panel, observe the answer, distinguish direct citation from reflected content, and check again over time. The result is a record, not a guess.
+clear names.  
+small interfaces.  
+useful errors.  
+tests for unusual cases.  
+documentation people can actually follow.  
+rollback paths.  
+fewer dependencies.  
+knowing when not to add another thing.
 
-virtualmase does not promise rankings, fabricate outcomes, or treat one answer as a durable result. A reflected topic is not the same as a cited source. A visible citation is not the same as persistence. Pending work remains pending until it is observed.
+## work
 
-The work is deliberately quiet. Client placements, contact details, and private case records stay private. Public material states only what can be shown.
+### [virtualmase.github.io](https://virtualmase.github.io)
 
-The standard is simple: **test what holds.**
+The public home for virtualmase projects, references, and working material.
 
-## Shared Lifecycle Skills
+### [lifecycle-skills](https://github.com/virtualmase/lifecycle-skills)
 
-For teams building public resources that need to remain useful as they evolve, [Lifecycle Skills](https://github.com/virtualmase/lifecycle-skills) offers open, evidence-led guides for **Prototype**, **Builder**, **Sweeper**, **Grower**, **Maintainer**, and **UX/UI/CX Market Intelligence** work. The collection is designed for practical reuse, transparent contribution, and accountable improvement rather than unattended action.
+Practical guides for taking work from an early idea to something people can use, inspect, maintain, and improve.
+
+Each guide favors small steps, reviewable changes, evidence, and clear responsibility.
+
+### [ai-mastery](https://github.com/virtualmase/ai-mastery)
+
+A public learning resource for studying technical concepts, software, and systems through deliberate practice.
+
+## how we work
+
+Start with the smallest useful version.
+
+Make important decisions visible.
+
+Prefer boring dependencies when boring works.
+
+Keep consequential changes reviewable.
+
+Write down what happened.
+
+Remove things that no longer earn their place.
+
+Leave the project easier for the next person to understand.
+
+## writing
+
+We publish notes on software, engineering judgment, maintenance, and the decisions behind work that lasts.
+
+**The Best Software Disappears**  
+Good software rarely looks impressive. It looks obvious.
+
+## elsewhere
+
+[website](https://virtualmase.github.io) · substack · x
+
+---
+
+**virtualmase**
+
+*build quietly.*
