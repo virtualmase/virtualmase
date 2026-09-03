@@ -6,6 +6,8 @@ virtualmase is an independent engineering practice focused on software, systems,
 
 We build in public when the work can help someone else.
 
+This profile tracks the public projects, notes, and operating principles that make that work easier to inspect and continue.
+
 ## selected work
 
 ### [ai-mastery](https://github.com/virtualmase/ai-mastery)
