@@ -62,7 +62,7 @@ Leave the project easier for the next person to understand.
 
 Notes on software, engineering judgment, maintenance, and things worth building.
 
-**[The Best Software Disappears](https://substack.com/@virtualmase)**  
+**[The Best Software Disappears](https://substack.com/home/post/p-213944575)**  
 Good software rarely looks impressive. It looks obvious.
 
 ## elsewhere
